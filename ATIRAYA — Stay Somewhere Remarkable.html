@@ -1,0 +1,4458 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://lcrhtzzbes.preview.c40.airoapp.ai/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" data-fs-namespace="FS" src="./ATIRAYA — Stay Somewhere Remarkable_files/latest.js.download"></script><script async="" crossorigin="anonymous" src="./ATIRAYA — Stay Somewhere Remarkable_files/fs.js.download"></script><script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./ATIRAYA — Stay Somewhere Remarkable_files/client"></script>
+
+    <script>
+      (function () {
+        var nativeRAF = window.requestAnimationFrame.bind(window);
+        var nativeCAF = window.cancelAnimationFrame.bind(window);
+        var deferred = new Map();
+        var replayed = new Map(); // syntheticId -> nativeId, from unfreeze until the callback fires or is cancelled
+        var nextId = -1;
+
+        window.__airoRafGate = {
+          frozen: false,
+          nativeRequestAnimationFrame: nativeRAF,
+          nativeCancelAnimationFrame: nativeCAF,
+        };
+
+        window.requestAnimationFrame = function (callback) {
+          if (!window.__airoRafGate.frozen) return nativeRAF(callback);
+          var id = nextId--;
+          deferred.set(id, callback);
+          return id;
+        };
+
+        window.cancelAnimationFrame = function (id) {
+          if (deferred.has(id)) {
+            deferred.delete(id);
+            return;
+          }
+          if (replayed.has(id)) {
+            var nativeId = replayed.get(id);
+            replayed.delete(id);
+            nativeCAF(nativeId);
+            return;
+          }
+          nativeCAF(id);
+        };
+
+        window.__airoRafGate.unfreeze = function () {
+          window.__airoRafGate.frozen = false;
+          var pending = Array.from(deferred.entries());
+          deferred.clear();
+          pending.forEach(function (entry) {
+            var syntheticId = entry[0];
+            var callback = entry[1];
+            var nativeId = nativeRAF(function (time) {
+              replayed.delete(syntheticId); // already ran; nothing left to cancel
+              if (window.__airoRafGate.frozen) {
+                // Re-frozen before this frame fired — re-defer under the same id, don't run it.
+                deferred.set(syntheticId, callback);
+                return;
+              }
+              callback(time);
+            });
+            replayed.set(syntheticId, nativeId);
+          });
+        };
+      })();
+    </script>
+
+    
+    <script>
+      (function () {
+        try {
+          var u = new URL(location.href);
+          if (u.searchParams.has('airoShareToken')) {
+            u.searchParams.delete('airoShareToken');
+            history.replaceState(null, '', u.toString());
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="referrer" content="same-origin">
+    <link rel="icon" href="https://lcrhtzzbes.preview.c40.airoapp.ai/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--app-head-->
+    <script src="./ATIRAYA — Stay Somewhere Remarkable_files/airo-video-slots.js.download"></script>
+    <script src="./ATIRAYA — Stay Somewhere Remarkable_files/airo-logo-orientation.js.download"></script>
+    <style>
+  #airo-boot-spinner {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #fff;
+    color: #555;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    animation: airo-boot-fade 0.2s ease 1s forwards;
+  }
+  #app:not(:empty) ~ #airo-boot-spinner {
+    display: none;
+  }
+  .airo-boot-ring {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(0, 0, 0, 0.12);
+    border-top-color: #555;
+    border-radius: 50%;
+    animation: airo-boot-spin 0.9s linear infinite;
+  }
+  .airo-boot-text,
+  .airo-boot-slow-text {
+    margin: 0;
+    font-size: 14px;
+  }
+  .airo-boot-slow-text {
+    display: none;
+  }
+  #airo-boot-spinner.airo-boot-slow .airo-boot-slow-text {
+    display: block;
+  }
+  @keyframes airo-boot-spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes airo-boot-fade {
+    to { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .airo-boot-ring {
+      animation-duration: 2.4s;
+    }
+  }
+</style>
+  <style type="text/css" data-vite-dev-id="/app/src/styles/globals.css">@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap');
+
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: var(--font-sans); /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono); /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+  :root {
+    /* Core Colors */
+    --background: 40 37% 97%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 40 37% 97%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 155 24% 23%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 30% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 42 25% 92%;
+    --muted-foreground: 38 11% 38%;
+    --accent: 37 30% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    --border: 37 20% 87%;
+    --input: 37 20% 87%;
+    --ring: 155 24% 23%;
+
+    /* Extended Colors */
+    --chart-1: 155 24% 53%;
+    --chart-2: 155 24% 38%;
+    --chart-3: 155 24% 23%;
+    --chart-4: 156 24% 8%;
+    --chart-5: 0 0% 0%;
+
+    /* Sidebar Colors */
+    --sidebar: 42 25% 92%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 155 24% 23%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 37 30% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 37 20% 87%;
+    --sidebar-ring: 155 24% 23%;
+
+    /* Typography */
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: "Cormorant Garamond", Georgia, serif;
+    --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+    /* Button radius: the kit's radiusButton is written here at install time;
+       the default matches shadcn `rounded-md` (calc(var(--radius) - 2px)) so a
+       kit without a button radius renders unchanged. Consumed by the Button
+       `cva` via `rounded-[var(--radius-button)]` (AIROBUILD-3249). */
+    --radius-button: calc(var(--radius) - 2px);
+
+    /* Shadows */
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+
+  *{
+  border-color: hsl(var(--border));
+}
+
+  body{
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  
+    font-family: var(--font-sans);
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading) !important;
+  }
+.\!container{
+  width: 100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-right: 2rem !important;
+  padding-left: 2rem !important;
+}
+.container{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+@media (min-width: 1400px){
+
+  .\!container{
+    max-width: 1400px !important;
+  }
+
+  .container{
+    max-width: 1400px;
+  }
+}
+  /* Defensive: a stray body H1 renders one step below .page-title and is
+     visually distinct from the real page title above it. */
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.pointer-events-none{
+  pointer-events: none;
+}
+.pointer-events-auto{
+  pointer-events: auto;
+}
+.\!visible{
+  visibility: visible !important;
+}
+.visible{
+  visibility: visible;
+}
+.invisible{
+  visibility: hidden;
+}
+.collapse{
+  visibility: collapse;
+}
+.static{
+  position: static;
+}
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+.inset-0{
+  inset: 0px;
+}
+.inset-x-0{
+  left: 0px;
+  right: 0px;
+}
+.inset-y-0{
+  top: 0px;
+  bottom: 0px;
+}
+.-bottom-12{
+  bottom: -3rem;
+}
+.-left-12{
+  left: -3rem;
+}
+.-right-1{
+  right: -0.25rem;
+}
+.-right-12{
+  right: -3rem;
+}
+.-top-1{
+  top: -0.25rem;
+}
+.-top-12{
+  top: -3rem;
+}
+.bottom-0{
+  bottom: 0px;
+}
+.bottom-10{
+  bottom: 2.5rem;
+}
+.left-0{
+  left: 0px;
+}
+.left-1\/2{
+  left: 50%;
+}
+.left-10{
+  left: 2.5rem;
+}
+.left-2{
+  left: 0.5rem;
+}
+.left-2\.5{
+  left: 0.625rem;
+}
+.left-\[50\%\]{
+  left: 50%;
+}
+.right-0{
+  right: 0px;
+}
+.right-10{
+  right: 2.5rem;
+}
+.right-4{
+  right: 1rem;
+}
+.right-5{
+  right: 1.25rem;
+}
+.top-0{
+  top: 0px;
+}
+.top-1\/2{
+  top: 50%;
+}
+.top-10{
+  top: 2.5rem;
+}
+.top-2\.5{
+  top: 0.625rem;
+}
+.top-4{
+  top: 1rem;
+}
+.top-5{
+  top: 1.25rem;
+}
+.top-\[1px\]{
+  top: 1px;
+}
+.top-\[50\%\]{
+  top: 50%;
+}
+.top-\[60\%\]{
+  top: 60%;
+}
+.top-full{
+  top: 100%;
+}
+.z-10{
+  z-index: 10;
+}
+.z-40{
+  z-index: 40;
+}
+.z-50{
+  z-index: 50;
+}
+.z-\[100\]{
+  z-index: 100;
+}
+.z-\[101\]{
+  z-index: 101;
+}
+.z-\[1\]{
+  z-index: 1;
+}
+.-mx-1{
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.-ml-4{
+  margin-left: -1rem;
+}
+.-mt-4{
+  margin-top: -1rem;
+}
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+.mb-12{
+  margin-bottom: 3rem;
+}
+.mb-14{
+  margin-bottom: 3.5rem;
+}
+.mb-16{
+  margin-bottom: 4rem;
+}
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+.mb-4{
+  margin-bottom: 1rem;
+}
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+.mb-6{
+  margin-bottom: 1.5rem;
+}
+.mb-8{
+  margin-bottom: 2rem;
+}
+.ml-1{
+  margin-left: 0.25rem;
+}
+.ml-auto{
+  margin-left: auto;
+}
+.mr-2{
+  margin-right: 0.5rem;
+}
+.mt-1\.5{
+  margin-top: 0.375rem;
+}
+.mt-2{
+  margin-top: 0.5rem;
+}
+.mt-24{
+  margin-top: 6rem;
+}
+.mt-4{
+  margin-top: 1rem;
+}
+.mt-8{
+  margin-top: 2rem;
+}
+.mt-auto{
+  margin-top: auto;
+}
+.block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
+.inline{
+  display: inline;
+}
+.flex{
+  display: flex;
+}
+.inline-flex{
+  display: inline-flex;
+}
+.table{
+  display: table;
+}
+.grid{
+  display: grid;
+}
+.contents{
+  display: contents;
+}
+.list-item{
+  display: list-item;
+}
+.hidden{
+  display: none;
+}
+.aspect-\[3\/4\]{
+  aspect-ratio: 3/4;
+}
+.aspect-\[4\/3\]{
+  aspect-ratio: 4/3;
+}
+.aspect-\[4\/5\]{
+  aspect-ratio: 4/5;
+}
+.aspect-square{
+  aspect-ratio: 1 / 1;
+}
+.size-4{
+  width: 1rem;
+  height: 1rem;
+}
+.size-\[--cell-size\]{
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+.h-1\.5{
+  height: 0.375rem;
+}
+.h-10{
+  height: 2.5rem;
+}
+.h-11{
+  height: 2.75rem;
+}
+.h-12{
+  height: 3rem;
+}
+.h-14{
+  height: 3.5rem;
+}
+.h-16{
+  height: 4rem;
+}
+.h-2{
+  height: 0.5rem;
+}
+.h-2\.5{
+  height: 0.625rem;
+}
+.h-3{
+  height: 0.75rem;
+}
+.h-3\.5{
+  height: 0.875rem;
+}
+.h-32{
+  height: 8rem;
+}
+.h-4{
+  height: 1rem;
+}
+.h-40{
+  height: 10rem;
+}
+.h-5{
+  height: 1.25rem;
+}
+.h-6{
+  height: 1.5rem;
+}
+.h-8{
+  height: 2rem;
+}
+.h-9{
+  height: 2.25rem;
+}
+.h-\[--cell-size\]{
+  height: var(--cell-size);
+}
+.h-\[1px\]{
+  height: 1px;
+}
+.h-\[50vh\]{
+  height: 50vh;
+}
+.h-\[70vh\]{
+  height: 70vh;
+}
+.h-\[var\(--radix-navigation-menu-viewport-height\)\]{
+  height: var(--radix-navigation-menu-viewport-height);
+}
+.h-\[var\(--radix-select-trigger-height\)\]{
+  height: var(--radix-select-trigger-height);
+}
+.h-auto{
+  height: auto;
+}
+.h-full{
+  height: 100%;
+}
+.h-px{
+  height: 1px;
+}
+.h-screen{
+  height: 100vh;
+}
+.max-h-10{
+  max-height: 2.5rem;
+}
+.max-h-12{
+  max-height: 3rem;
+}
+.max-h-16{
+  max-height: 4rem;
+}
+.max-h-\[--radix-context-menu-content-available-height\]{
+  max-height: var(--radix-context-menu-content-available-height);
+}
+.max-h-\[--radix-select-content-available-height\]{
+  max-height: var(--radix-select-content-available-height);
+}
+.max-h-\[300px\]{
+  max-height: 300px;
+}
+.max-h-\[var\(--radix-dropdown-menu-content-available-height\)\]{
+  max-height: var(--radix-dropdown-menu-content-available-height);
+}
+.min-h-\[300px\]{
+  min-height: 300px;
+}
+.min-h-\[500px\]{
+  min-height: 500px;
+}
+.min-h-\[600px\]{
+  min-height: 600px;
+}
+.min-h-\[80px\]{
+  min-height: 80px;
+}
+.min-h-screen{
+  min-height: 100vh;
+}
+.w-10{
+  width: 2.5rem;
+}
+.w-11{
+  width: 2.75rem;
+}
+.w-12{
+  width: 3rem;
+}
+.w-2{
+  width: 0.5rem;
+}
+.w-2\.5{
+  width: 0.625rem;
+}
+.w-3{
+  width: 0.75rem;
+}
+.w-3\.5{
+  width: 0.875rem;
+}
+.w-3\/4{
+  width: 75%;
+}
+.w-32{
+  width: 8rem;
+}
+.w-4{
+  width: 1rem;
+}
+.w-40{
+  width: 10rem;
+}
+.w-5{
+  width: 1.25rem;
+}
+.w-56{
+  width: 14rem;
+}
+.w-6{
+  width: 1.5rem;
+}
+.w-64{
+  width: 16rem;
+}
+.w-72{
+  width: 18rem;
+}
+.w-8{
+  width: 2rem;
+}
+.w-9{
+  width: 2.25rem;
+}
+.w-\[--cell-size\]{
+  width: var(--cell-size);
+}
+.w-\[100px\]{
+  width: 100px;
+}
+.w-\[1px\]{
+  width: 1px;
+}
+.w-auto{
+  width: auto;
+}
+.w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-full{
+  width: 100%;
+}
+.w-max{
+  width: -moz-max-content;
+  width: max-content;
+}
+.w-px{
+  width: 1px;
+}
+.min-w-0{
+  min-width: 0px;
+}
+.min-w-10{
+  min-width: 2.5rem;
+}
+.min-w-11{
+  min-width: 2.75rem;
+}
+.min-w-9{
+  min-width: 2.25rem;
+}
+.min-w-\[--cell-size\]{
+  min-width: var(--cell-size);
+}
+.min-w-\[12rem\]{
+  min-width: 12rem;
+}
+.min-w-\[20px\]{
+  min-width: 20px;
+}
+.min-w-\[8rem\]{
+  min-width: 8rem;
+}
+.min-w-\[var\(--radix-select-trigger-width\)\]{
+  min-width: var(--radix-select-trigger-width);
+}
+.max-w-2xl{
+  max-width: 42rem;
+}
+.max-w-3xl{
+  max-width: 48rem;
+}
+.max-w-4xl{
+  max-width: 56rem;
+}
+.max-w-6xl{
+  max-width: 72rem;
+}
+.max-w-7xl{
+  max-width: 80rem;
+}
+.max-w-\[160px\]{
+  max-width: 160px;
+}
+.max-w-\[180px\]{
+  max-width: 180px;
+}
+.max-w-\[480px\]{
+  max-width: 480px;
+}
+.max-w-full{
+  max-width: 100%;
+}
+.max-w-lg{
+  max-width: 32rem;
+}
+.max-w-max{
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.max-w-md{
+  max-width: 28rem;
+}
+.max-w-screen-2xl{
+  max-width: 1536px;
+}
+.max-w-screen-lg{
+  max-width: 1024px;
+}
+.max-w-screen-md{
+  max-width: 768px;
+}
+.max-w-screen-sm{
+  max-width: 640px;
+}
+.max-w-screen-xl{
+  max-width: 1280px;
+}
+.max-w-sm{
+  max-width: 24rem;
+}
+.max-w-xl{
+  max-width: 36rem;
+}
+.flex-1{
+  flex: 1 1 0%;
+}
+.flex-shrink-0{
+  flex-shrink: 0;
+}
+.shrink-0{
+  flex-shrink: 0;
+}
+.grow{
+  flex-grow: 1;
+}
+.grow-0{
+  flex-grow: 0;
+}
+.basis-full{
+  flex-basis: 100%;
+}
+.caption-bottom{
+  caption-side: bottom;
+}
+.border-collapse{
+  border-collapse: collapse;
+}
+.origin-\[--radix-context-menu-content-transform-origin\]{
+  transform-origin: var(--radix-context-menu-content-transform-origin);
+}
+.origin-\[--radix-dropdown-menu-content-transform-origin\]{
+  transform-origin: var(--radix-dropdown-menu-content-transform-origin);
+}
+.origin-\[--radix-hover-card-content-transform-origin\]{
+  transform-origin: var(--radix-hover-card-content-transform-origin);
+}
+.origin-\[--radix-menubar-content-transform-origin\]{
+  transform-origin: var(--radix-menubar-content-transform-origin);
+}
+.origin-\[--radix-popover-content-transform-origin\]{
+  transform-origin: var(--radix-popover-content-transform-origin);
+}
+.origin-\[--radix-select-content-transform-origin\]{
+  transform-origin: var(--radix-select-content-transform-origin);
+}
+.origin-\[--radix-tooltip-content-transform-origin\]{
+  transform-origin: var(--radix-tooltip-content-transform-origin);
+}
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-x-full{
+  --tw-translate-x: -100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-0{
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-x-\[-50\%\]{
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-\[-50\%\]{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-45{
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-90{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes pulse{
+
+  50%{
+    opacity: .5;
+  }
+}
+.animate-pulse{
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+.animate-spin{
+  animation: spin 1s linear infinite;
+}
+.cursor-default{
+  cursor: default;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.touch-none{
+  touch-action: none;
+}
+.select-none{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.resize-none{
+  resize: none;
+}
+.resize{
+  resize: both;
+}
+.list-decimal{
+  list-style-type: decimal;
+}
+.list-disc{
+  list-style-type: disc;
+}
+.list-none{
+  list-style-type: none;
+}
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-col{
+  flex-direction: column;
+}
+.flex-col-reverse{
+  flex-direction: column-reverse;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.items-start{
+  align-items: flex-start;
+}
+.items-end{
+  align-items: flex-end;
+}
+.items-center{
+  align-items: center;
+}
+.items-stretch{
+  align-items: stretch;
+}
+.justify-center{
+  justify-content: center;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.gap-0{
+  gap: 0px;
+}
+.gap-1{
+  gap: 0.25rem;
+}
+.gap-1\.5{
+  gap: 0.375rem;
+}
+.gap-10{
+  gap: 2.5rem;
+}
+.gap-12{
+  gap: 3rem;
+}
+.gap-2{
+  gap: 0.5rem;
+}
+.gap-3{
+  gap: 0.75rem;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-6{
+  gap: 1.5rem;
+}
+.gap-8{
+  gap: 2rem;
+}
+.space-x-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.375rem * var(--tw-space-y-reverse));
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+.self-center{
+  align-self: center;
+}
+.self-stretch{
+  align-self: stretch;
+}
+.overflow-auto{
+  overflow: auto;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.overflow-y-auto{
+  overflow-y: auto;
+}
+.overflow-x-hidden{
+  overflow-x: hidden;
+}
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.whitespace-nowrap{
+  white-space: nowrap;
+}
+.break-words{
+  overflow-wrap: break-word;
+}
+.rounded{
+  border-radius: 0.25rem;
+}
+.rounded-\[inherit\]{
+  border-radius: inherit;
+}
+.rounded-\[var\(--radius-button\)\]{
+  border-radius: var(--radius-button);
+}
+.rounded-full{
+  border-radius: 9999px;
+}
+.rounded-lg{
+  border-radius: var(--radius);
+}
+.rounded-md{
+  border-radius: calc(var(--radius) - 2px);
+}
+.rounded-none{
+  border-radius: 0px;
+}
+.rounded-sm{
+  border-radius: calc(var(--radius) - 4px);
+}
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+.rounded-l-md{
+  border-top-left-radius: calc(var(--radius) - 2px);
+  border-bottom-left-radius: calc(var(--radius) - 2px);
+}
+.rounded-r-md{
+  border-top-right-radius: calc(var(--radius) - 2px);
+  border-bottom-right-radius: calc(var(--radius) - 2px);
+}
+.rounded-t-\[10px\]{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.rounded-tl-sm{
+  border-top-left-radius: calc(var(--radius) - 4px);
+}
+.border{
+  border-width: 1px;
+}
+.border-2{
+  border-width: 2px;
+}
+.border-y{
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+.border-b{
+  border-bottom-width: 1px;
+}
+.border-l{
+  border-left-width: 1px;
+}
+.border-r{
+  border-right-width: 1px;
+}
+.border-t{
+  border-top-width: 1px;
+}
+.border-border{
+  border-color: hsl(var(--border));
+}
+.border-destructive\/50{
+  border-color: hsl(var(--destructive) / 0.5);
+}
+.border-gray-200{
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+.border-input{
+  border-color: hsl(var(--input));
+}
+.border-primary{
+  border-color: hsl(var(--primary));
+}
+.border-primary-foreground\/20{
+  border-color: hsl(var(--primary-foreground) / 0.2);
+}
+.border-transparent{
+  border-color: transparent;
+}
+.border-white\/60{
+  border-color: rgb(255 255 255 / 0.6);
+}
+.border-l-transparent{
+  border-left-color: transparent;
+}
+.border-t-transparent{
+  border-top-color: transparent;
+}
+.bg-accent{
+  background-color: hsl(var(--accent));
+}
+.bg-background{
+  background-color: hsl(var(--background));
+}
+.bg-background\/80{
+  background-color: hsl(var(--background) / 0.8);
+}
+.bg-background\/95{
+  background-color: hsl(var(--background) / 0.95);
+}
+.bg-black\/50{
+  background-color: rgb(0 0 0 / 0.5);
+}
+.bg-black\/60{
+  background-color: rgb(0 0 0 / 0.6);
+}
+.bg-black\/80{
+  background-color: rgb(0 0 0 / 0.8);
+}
+.bg-border{
+  background-color: hsl(var(--border));
+}
+.bg-card{
+  background-color: hsl(var(--card));
+}
+.bg-destructive{
+  background-color: hsl(var(--destructive));
+}
+.bg-foreground{
+  background-color: hsl(var(--foreground));
+}
+.bg-gray-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-50\/50{
+  background-color: rgb(249 250 251 / 0.5);
+}
+.bg-muted{
+  background-color: hsl(var(--muted));
+}
+.bg-muted\/50{
+  background-color: hsl(var(--muted) / 0.5);
+}
+.bg-popover{
+  background-color: hsl(var(--popover));
+}
+.bg-primary{
+  background-color: hsl(var(--primary));
+}
+.bg-primary-foreground\/40{
+  background-color: hsl(var(--primary-foreground) / 0.4);
+}
+.bg-primary\/30{
+  background-color: hsl(var(--primary) / 0.3);
+}
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+}
+.bg-secondary{
+  background-color: hsl(var(--secondary));
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.bg-white\/10{
+  background-color: rgb(255 255 255 / 0.1);
+}
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+.bg-gradient-to-t{
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+.from-background{
+  --tw-gradient-from: hsl(var(--background)) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(var(--background) / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-black\/10{
+  --tw-gradient-from: rgb(0 0 0 / 0.1) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-black\/70{
+  --tw-gradient-from: rgb(0 0 0 / 0.7) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.via-black\/20{
+  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.2) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+.to-black\/60{
+  --tw-gradient-to: rgb(0 0 0 / 0.6) var(--tw-gradient-to-position);
+}
+.to-black\/65{
+  --tw-gradient-to: rgb(0 0 0 / 0.65) var(--tw-gradient-to-position);
+}
+.to-muted\/20{
+  --tw-gradient-to: hsl(var(--muted) / 0.2) var(--tw-gradient-to-position);
+}
+.to-transparent{
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+.fill-current{
+  fill: currentColor;
+}
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-0{
+  padding: 0px;
+}
+.p-1{
+  padding: 0.25rem;
+}
+.p-1\.5{
+  padding: 0.375rem;
+}
+.p-2{
+  padding: 0.5rem;
+}
+.p-3{
+  padding: 0.75rem;
+}
+.p-4{
+  padding: 1rem;
+}
+.p-5{
+  padding: 1.25rem;
+}
+.p-6{
+  padding: 1.5rem;
+}
+.p-\[1px\]{
+  padding: 1px;
+}
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-2\.5{
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-\[--cell-size\]{
+  padding-left: var(--cell-size);
+  padding-right: var(--cell-size);
+}
+.py-0\.5{
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.py-1\.5{
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.py-14{
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.py-16{
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-2\.5{
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.py-3\.5{
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-8{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.pb-0\.5{
+  padding-bottom: 0.125rem;
+}
+.pb-12{
+  padding-bottom: 3rem;
+}
+.pb-16{
+  padding-bottom: 4rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
+}
+.pb-4{
+  padding-bottom: 1rem;
+}
+.pl-2{
+  padding-left: 0.5rem;
+}
+.pl-2\.5{
+  padding-left: 0.625rem;
+}
+.pl-4{
+  padding-left: 1rem;
+}
+.pl-6{
+  padding-left: 1.5rem;
+}
+.pl-8{
+  padding-left: 2rem;
+}
+.pr-1{
+  padding-right: 0.25rem;
+}
+.pr-10{
+  padding-right: 2.5rem;
+}
+.pr-2{
+  padding-right: 0.5rem;
+}
+.pr-2\.5{
+  padding-right: 0.625rem;
+}
+.pr-3{
+  padding-right: 0.75rem;
+}
+.pt-0{
+  padding-top: 0px;
+}
+.pt-4{
+  padding-top: 1rem;
+}
+.pt-40{
+  padding-top: 10rem;
+}
+.pt-8{
+  padding-top: 2rem;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.text-justify{
+  text-align: justify;
+}
+.align-middle{
+  vertical-align: middle;
+}
+.font-heading{
+  font-family: var(--font-heading);
+}
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.text-7xl{
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-8xl{
+  font-size: 6rem;
+  line-height: 1;
+}
+.text-9xl{
+  font-size: 8rem;
+  line-height: 1;
+}
+.text-\[0\.8rem\]{
+  font-size: 0.8rem;
+}
+.text-\[10px\]{
+  font-size: 10px;
+}
+.text-\[13px\]{
+  font-size: 13px;
+}
+.text-\[14px\]{
+  font-size: 14px;
+}
+.text-\[15px\]{
+  font-size: 15px;
+}
+.text-\[9px\]{
+  font-size: 9px;
+}
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold{
+  font-weight: 700;
+}
+.font-light{
+  font-weight: 300;
+}
+.font-medium{
+  font-weight: 500;
+}
+.font-normal{
+  font-weight: 400;
+}
+.font-semibold{
+  font-weight: 600;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase;
+}
+.italic{
+  font-style: italic;
+}
+.ordinal{
+  --tw-ordinal: ordinal;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+.leading-\[1\.08\]{
+  line-height: 1.08;
+}
+.leading-\[1\.1\]{
+  line-height: 1.1;
+}
+.leading-\[1\.7\]{
+  line-height: 1.7;
+}
+.leading-\[1\.8\]{
+  line-height: 1.8;
+}
+.leading-none{
+  line-height: 1;
+}
+.leading-relaxed{
+  line-height: 1.625;
+}
+.leading-snug{
+  line-height: 1.375;
+}
+.leading-tight{
+  line-height: 1.25;
+}
+.tracking-\[0\.12em\]{
+  letter-spacing: 0.12em;
+}
+.tracking-\[0\.15em\]{
+  letter-spacing: 0.15em;
+}
+.tracking-\[0\.1em\]{
+  letter-spacing: 0.1em;
+}
+.tracking-\[0\.22em\]{
+  letter-spacing: 0.22em;
+}
+.tracking-\[0\.24em\]{
+  letter-spacing: 0.24em;
+}
+.tracking-\[0\.25em\]{
+  letter-spacing: 0.25em;
+}
+.tracking-\[0\.2em\]{
+  letter-spacing: 0.2em;
+}
+.tracking-tight{
+  letter-spacing: -0.025em;
+}
+.tracking-wide{
+  letter-spacing: 0.025em;
+}
+.tracking-widest{
+  letter-spacing: 0.1em;
+}
+.text-\[\<length\>\]{
+  color: <length>;
+}
+.text-accent-foreground{
+  color: hsl(var(--accent-foreground));
+}
+.text-card-foreground{
+  color: hsl(var(--card-foreground));
+}
+.text-current{
+  color: currentColor;
+}
+.text-destructive{
+  color: hsl(var(--destructive));
+}
+.text-destructive-foreground{
+  color: hsl(var(--destructive-foreground));
+}
+.text-foreground{
+  color: hsl(var(--foreground));
+}
+.text-gray-400{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+.text-gray-600{
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+}
+.text-gray-700{
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+}
+.text-gray-900{
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+.text-input{
+  color: hsl(var(--input));
+}
+.text-muted-foreground{
+  color: hsl(var(--muted-foreground));
+}
+.text-popover-foreground{
+  color: hsl(var(--popover-foreground));
+}
+.text-primary{
+  color: hsl(var(--primary));
+}
+.text-primary-foreground{
+  color: hsl(var(--primary-foreground));
+}
+.text-primary-foreground\/40{
+  color: hsl(var(--primary-foreground) / 0.4);
+}
+.text-primary-foreground\/50{
+  color: hsl(var(--primary-foreground) / 0.5);
+}
+.text-primary-foreground\/60{
+  color: hsl(var(--primary-foreground) / 0.6);
+}
+.text-primary-foreground\/70{
+  color: hsl(var(--primary-foreground) / 0.7);
+}
+.text-primary-foreground\/80{
+  color: hsl(var(--primary-foreground) / 0.8);
+}
+.text-secondary-foreground{
+  color: hsl(var(--secondary-foreground));
+}
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-white\/60{
+  color: rgb(255 255 255 / 0.6);
+}
+.text-white\/70{
+  color: rgb(255 255 255 / 0.7);
+}
+.text-white\/80{
+  color: rgb(255 255 255 / 0.8);
+}
+.text-white\/90{
+  color: rgb(255 255 255 / 0.9);
+}
+.underline{
+  text-decoration-line: underline;
+}
+.line-through{
+  text-decoration-line: line-through;
+}
+.underline-offset-4{
+  text-underline-offset: 4px;
+}
+.opacity-0{
+  opacity: 0;
+}
+.opacity-10{
+  opacity: 0.1;
+}
+.opacity-100{
+  opacity: 1;
+}
+.opacity-20{
+  opacity: 0.2;
+}
+.opacity-50{
+  opacity: 0.5;
+}
+.opacity-60{
+  opacity: 0.6;
+}
+.opacity-70{
+  opacity: 0.7;
+}
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-2xl{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-lg{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.outline{
+  outline-style: solid;
+}
+.ring-0{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.ring-2{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.ring-ring{
+  --tw-ring-color: hsl(var(--ring));
+}
+.ring-offset-background{
+  --tw-ring-offset-color: hsl(var(--background));
+}
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-3xl{
+  --tw-blur: blur(64px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.brightness-0{
+  --tw-brightness: brightness(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.invert{
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-blur-sm{
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.backdrop-filter{
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+.transition{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-opacity{
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-shadow{
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-1000{
+  transition-duration: 1000ms;
+}
+.duration-200{
+  transition-duration: 200ms;
+}
+.duration-300{
+  transition-duration: 300ms;
+}
+.duration-500{
+  transition-duration: 500ms;
+}
+.duration-700{
+  transition-duration: 700ms;
+}
+.ease-in{
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ease-out{
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+@keyframes enter{
+
+  from{
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
+  }
+}
+@keyframes exit{
+
+  to{
+    opacity: var(--tw-exit-opacity, 1);
+    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
+  }
+}
+.animate-in{
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+.fade-in-0{
+  --tw-enter-opacity: 0;
+}
+.fade-in-80{
+  --tw-enter-opacity: 0.8;
+}
+.zoom-in-95{
+  --tw-enter-scale: .95;
+}
+.duration-1000{
+  animation-duration: 1000ms;
+}
+.duration-200{
+  animation-duration: 200ms;
+}
+.duration-300{
+  animation-duration: 300ms;
+}
+.duration-500{
+  animation-duration: 500ms;
+}
+.duration-700{
+  animation-duration: 700ms;
+}
+.ease-in{
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.ease-in-out{
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ease-out{
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+.running{
+  animation-play-state: running;
+}
+.paused{
+  animation-play-state: paused;
+}
+  .animate-in {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+.\[--cell-size\:2rem\]{
+  --cell-size: 2rem;
+}
+
+/* Shared long-form type scale (RUBICON-554). Single source of truth for
+   page titles and rich markdown content; anchored to the site heading range so
+   blog posts match the rest of the customer's site. */
+
+/* Custom utility classes */
+
+/* Unless told otherwise, keep it for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+.file\:border-0::file-selector-button{
+  border-width: 0px;
+}
+.file\:bg-transparent::file-selector-button{
+  background-color: transparent;
+}
+.file\:text-sm::file-selector-button{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.file\:font-medium::file-selector-button{
+  font-weight: 500;
+}
+.file\:text-foreground::file-selector-button{
+  color: hsl(var(--foreground));
+}
+.placeholder\:text-muted-foreground::-moz-placeholder{
+  color: hsl(var(--muted-foreground));
+}
+.placeholder\:text-muted-foreground::placeholder{
+  color: hsl(var(--muted-foreground));
+}
+.after\:absolute::after{
+  content: var(--tw-content);
+  position: absolute;
+}
+.after\:inset-y-0::after{
+  content: var(--tw-content);
+  top: 0px;
+  bottom: 0px;
+}
+.after\:left-1\/2::after{
+  content: var(--tw-content);
+  left: 50%;
+}
+.after\:w-1::after{
+  content: var(--tw-content);
+  width: 0.25rem;
+}
+.after\:-translate-x-1\/2::after{
+  content: var(--tw-content);
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.first\:rounded-l-md:first-child{
+  border-top-left-radius: calc(var(--radius) - 2px);
+  border-bottom-left-radius: calc(var(--radius) - 2px);
+}
+.first\:border-l:first-child{
+  border-left-width: 1px;
+}
+.last\:rounded-r-md:last-child{
+  border-top-right-radius: calc(var(--radius) - 2px);
+  border-bottom-right-radius: calc(var(--radius) - 2px);
+}
+.last\:border-0:last-child{
+  border-width: 0px;
+}
+.hover\:scale-105:hover{
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.hover\:scale-\[1\.02\]:hover{
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.hover\:border-primary:hover{
+  border-color: hsl(var(--primary));
+}
+.hover\:bg-accent:hover{
+  background-color: hsl(var(--accent));
+}
+.hover\:bg-background:hover{
+  background-color: hsl(var(--background));
+}
+.hover\:bg-destructive\/80:hover{
+  background-color: hsl(var(--destructive) / 0.8);
+}
+.hover\:bg-destructive\/90:hover{
+  background-color: hsl(var(--destructive) / 0.9);
+}
+.hover\:bg-gray-100:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-gray-50:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+.hover\:bg-muted:hover{
+  background-color: hsl(var(--muted));
+}
+.hover\:bg-muted\/50:hover{
+  background-color: hsl(var(--muted) / 0.5);
+}
+.hover\:bg-primary:hover{
+  background-color: hsl(var(--primary));
+}
+.hover\:bg-primary\/80:hover{
+  background-color: hsl(var(--primary) / 0.8);
+}
+.hover\:bg-primary\/90:hover{
+  background-color: hsl(var(--primary) / 0.9);
+}
+.hover\:bg-secondary\/80:hover{
+  background-color: hsl(var(--secondary) / 0.8);
+}
+.hover\:bg-white\/10:hover{
+  background-color: rgb(255 255 255 / 0.1);
+}
+.hover\:text-accent-foreground:hover{
+  color: hsl(var(--accent-foreground));
+}
+.hover\:text-foreground:hover{
+  color: hsl(var(--foreground));
+}
+.hover\:text-gray-900:hover{
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+}
+.hover\:text-muted-foreground:hover{
+  color: hsl(var(--muted-foreground));
+}
+.hover\:text-primary:hover{
+  color: hsl(var(--primary));
+}
+.hover\:text-primary-foreground:hover{
+  color: hsl(var(--primary-foreground));
+}
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
+.hover\:opacity-100:hover{
+  opacity: 1;
+}
+.hover\:opacity-60:hover{
+  opacity: 0.6;
+}
+.hover\:opacity-70:hover{
+  opacity: 0.7;
+}
+.hover\:shadow-lg:hover{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.hover\:shadow-xl:hover{
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.focus\:border-transparent:focus{
+  border-color: transparent;
+}
+.focus\:bg-accent:focus{
+  background-color: hsl(var(--accent));
+}
+.focus\:bg-white:focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.focus\:text-accent-foreground:focus{
+  color: hsl(var(--accent-foreground));
+}
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus\:ring-2:focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.focus\:ring-gray-200:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity, 1));
+}
+.focus\:ring-ring:focus{
+  --tw-ring-color: hsl(var(--ring));
+}
+.focus\:ring-offset-2:focus{
+  --tw-ring-offset-width: 2px;
+}
+.focus-visible\:outline-none:focus-visible{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus-visible\:ring-1:focus-visible{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.focus-visible\:ring-2:focus-visible{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.focus-visible\:ring-ring:focus-visible{
+  --tw-ring-color: hsl(var(--ring));
+}
+.focus-visible\:ring-offset-1:focus-visible{
+  --tw-ring-offset-width: 1px;
+}
+.focus-visible\:ring-offset-2:focus-visible{
+  --tw-ring-offset-width: 2px;
+}
+.focus-visible\:ring-offset-background:focus-visible{
+  --tw-ring-offset-color: hsl(var(--background));
+}
+.disabled\:pointer-events-none:disabled{
+  pointer-events: none;
+}
+.disabled\:cursor-not-allowed:disabled{
+  cursor: not-allowed;
+}
+.disabled\:opacity-50:disabled{
+  opacity: 0.5;
+}
+.group:hover .group-hover\:block{
+  display: block;
+}
+.group:hover .group-hover\:scale-105{
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group:hover .group-hover\:text-accent{
+  color: hsl(var(--accent));
+}
+.group:hover .group-hover\:text-primary{
+  color: hsl(var(--primary));
+}
+.group.toaster .group-\[\.toaster\]\:border-border{
+  border-color: hsl(var(--border));
+}
+.group.toast .group-\[\.toast\]\:bg-muted{
+  background-color: hsl(var(--muted));
+}
+.group.toast .group-\[\.toast\]\:bg-primary{
+  background-color: hsl(var(--primary));
+}
+.group.toaster .group-\[\.toaster\]\:bg-background{
+  background-color: hsl(var(--background));
+}
+.group.toast .group-\[\.toast\]\:text-muted-foreground{
+  color: hsl(var(--muted-foreground));
+}
+.group.toast .group-\[\.toast\]\:text-primary-foreground{
+  color: hsl(var(--primary-foreground));
+}
+.group.toaster .group-\[\.toaster\]\:text-foreground{
+  color: hsl(var(--foreground));
+}
+.group.toaster .group-\[\.toaster\]\:shadow-lg{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.peer:disabled ~ .peer-disabled\:cursor-not-allowed{
+  cursor: not-allowed;
+}
+.peer:disabled ~ .peer-disabled\:opacity-70{
+  opacity: 0.7;
+}
+.has-\[\:disabled\]\:opacity-50:has(:disabled){
+  opacity: 0.5;
+}
+.aria-disabled\:opacity-50[aria-disabled="true"]{
+  opacity: 0.5;
+}
+.aria-selected\:text-muted-foreground[aria-selected="true"]{
+  color: hsl(var(--muted-foreground));
+}
+.data-\[disabled\=true\]\:pointer-events-none[data-disabled="true"]{
+  pointer-events: none;
+}
+.data-\[disabled\]\:pointer-events-none[data-disabled]{
+  pointer-events: none;
+}
+.data-\[panel-group-direction\=vertical\]\:h-px[data-panel-group-direction="vertical"]{
+  height: 1px;
+}
+.data-\[panel-group-direction\=vertical\]\:w-full[data-panel-group-direction="vertical"]{
+  width: 100%;
+}
+.data-\[side\=bottom\]\:translate-y-1[data-side="bottom"]{
+  --tw-translate-y: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[side\=left\]\:-translate-x-1[data-side="left"]{
+  --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[side\=right\]\:translate-x-1[data-side="right"]{
+  --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[side\=top\]\:-translate-y-1[data-side="top"]{
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[state\=checked\]\:translate-x-5[data-state="checked"]{
+  --tw-translate-x: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[state\=unchecked\]\:translate-x-0[data-state="unchecked"]{
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes accordion-up{
+
+  from{
+    height: var(--radix-accordion-content-height);
+  }
+
+  to{
+    height: 0;
+  }
+}
+.data-\[state\=closed\]\:animate-accordion-up[data-state="closed"]{
+  animation: accordion-up 0.2s ease-out;
+}
+@keyframes accordion-down{
+
+  from{
+    height: 0;
+  }
+
+  to{
+    height: var(--radix-accordion-content-height);
+  }
+}
+.data-\[state\=open\]\:animate-accordion-down[data-state="open"]{
+  animation: accordion-down 0.2s ease-out;
+}
+.data-\[panel-group-direction\=vertical\]\:flex-col[data-panel-group-direction="vertical"]{
+  flex-direction: column;
+}
+.data-\[range-end\=true\]\:rounded-md[data-range-end="true"]{
+  border-radius: calc(var(--radius) - 2px);
+}
+.data-\[range-middle\=true\]\:rounded-none[data-range-middle="true"]{
+  border-radius: 0px;
+}
+.data-\[range-start\=true\]\:rounded-md[data-range-start="true"]{
+  border-radius: calc(var(--radius) - 2px);
+}
+.data-\[selected\=true\]\:rounded-none[data-selected="true"]{
+  border-radius: 0px;
+}
+.data-\[range-end\=true\]\:bg-primary[data-range-end="true"]{
+  background-color: hsl(var(--primary));
+}
+.data-\[range-middle\=true\]\:bg-accent[data-range-middle="true"]{
+  background-color: hsl(var(--accent));
+}
+.data-\[range-start\=true\]\:bg-primary[data-range-start="true"]{
+  background-color: hsl(var(--primary));
+}
+.data-\[selected-single\=true\]\:bg-primary[data-selected-single="true"]{
+  background-color: hsl(var(--primary));
+}
+.data-\[selected\=\'true\'\]\:bg-accent[data-selected='true']{
+  background-color: hsl(var(--accent));
+}
+.data-\[state\=active\]\:bg-background[data-state="active"]{
+  background-color: hsl(var(--background));
+}
+.data-\[state\=checked\]\:bg-primary[data-state="checked"]{
+  background-color: hsl(var(--primary));
+}
+.data-\[state\=on\]\:bg-accent[data-state="on"]{
+  background-color: hsl(var(--accent));
+}
+.data-\[state\=open\]\:bg-accent[data-state="open"]{
+  background-color: hsl(var(--accent));
+}
+.data-\[state\=open\]\:bg-accent\/50[data-state="open"]{
+  background-color: hsl(var(--accent) / 0.5);
+}
+.data-\[state\=open\]\:bg-secondary[data-state="open"]{
+  background-color: hsl(var(--secondary));
+}
+.data-\[state\=selected\]\:bg-muted[data-state="selected"]{
+  background-color: hsl(var(--muted));
+}
+.data-\[state\=unchecked\]\:bg-input[data-state="unchecked"]{
+  background-color: hsl(var(--input));
+}
+.data-\[placeholder\]\:text-muted-foreground[data-placeholder]{
+  color: hsl(var(--muted-foreground));
+}
+.data-\[range-end\=true\]\:text-primary-foreground[data-range-end="true"]{
+  color: hsl(var(--primary-foreground));
+}
+.data-\[range-middle\=true\]\:text-accent-foreground[data-range-middle="true"]{
+  color: hsl(var(--accent-foreground));
+}
+.data-\[range-start\=true\]\:text-primary-foreground[data-range-start="true"]{
+  color: hsl(var(--primary-foreground));
+}
+.data-\[selected-single\=true\]\:text-primary-foreground[data-selected-single="true"]{
+  color: hsl(var(--primary-foreground));
+}
+.data-\[selected\=true\]\:text-accent-foreground[data-selected="true"]{
+  color: hsl(var(--accent-foreground));
+}
+.data-\[state\=active\]\:text-foreground[data-state="active"]{
+  color: hsl(var(--foreground));
+}
+.data-\[state\=checked\]\:text-primary-foreground[data-state="checked"]{
+  color: hsl(var(--primary-foreground));
+}
+.data-\[state\=on\]\:text-accent-foreground[data-state="on"]{
+  color: hsl(var(--accent-foreground));
+}
+.data-\[state\=open\]\:text-accent-foreground[data-state="open"]{
+  color: hsl(var(--accent-foreground));
+}
+.data-\[state\=open\]\:text-muted-foreground[data-state="open"]{
+  color: hsl(var(--muted-foreground));
+}
+.data-\[disabled\=true\]\:opacity-50[data-disabled="true"]{
+  opacity: 0.5;
+}
+.data-\[disabled\]\:opacity-50[data-disabled]{
+  opacity: 0.5;
+}
+.data-\[state\=active\]\:shadow-sm[data-state="active"]{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.data-\[state\=closed\]\:duration-300[data-state="closed"]{
+  transition-duration: 300ms;
+}
+.data-\[state\=open\]\:duration-500[data-state="open"]{
+  transition-duration: 500ms;
+}
+.data-\[motion\^\=from-\]\:animate-in[data-motion^="from-"]{
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+.data-\[state\=open\]\:animate-in[data-state="open"]{
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+.data-\[state\=visible\]\:animate-in[data-state="visible"]{
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-rotate: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+.data-\[motion\^\=to-\]\:animate-out[data-motion^="to-"]{
+  animation-name: exit;
+  animation-duration: 150ms;
+  --tw-exit-opacity: initial;
+  --tw-exit-scale: initial;
+  --tw-exit-rotate: initial;
+  --tw-exit-translate-x: initial;
+  --tw-exit-translate-y: initial;
+}
+.data-\[state\=closed\]\:animate-out[data-state="closed"]{
+  animation-name: exit;
+  animation-duration: 150ms;
+  --tw-exit-opacity: initial;
+  --tw-exit-scale: initial;
+  --tw-exit-rotate: initial;
+  --tw-exit-translate-x: initial;
+  --tw-exit-translate-y: initial;
+}
+.data-\[state\=hidden\]\:animate-out[data-state="hidden"]{
+  animation-name: exit;
+  animation-duration: 150ms;
+  --tw-exit-opacity: initial;
+  --tw-exit-scale: initial;
+  --tw-exit-rotate: initial;
+  --tw-exit-translate-x: initial;
+  --tw-exit-translate-y: initial;
+}
+.data-\[motion\^\=from-\]\:fade-in[data-motion^="from-"]{
+  --tw-enter-opacity: 0;
+}
+.data-\[motion\^\=to-\]\:fade-out[data-motion^="to-"]{
+  --tw-exit-opacity: 0;
+}
+.data-\[state\=closed\]\:fade-out-0[data-state="closed"]{
+  --tw-exit-opacity: 0;
+}
+.data-\[state\=hidden\]\:fade-out[data-state="hidden"]{
+  --tw-exit-opacity: 0;
+}
+.data-\[state\=open\]\:fade-in-0[data-state="open"]{
+  --tw-enter-opacity: 0;
+}
+.data-\[state\=visible\]\:fade-in[data-state="visible"]{
+  --tw-enter-opacity: 0;
+}
+.data-\[state\=closed\]\:zoom-out-95[data-state="closed"]{
+  --tw-exit-scale: .95;
+}
+.data-\[state\=open\]\:zoom-in-90[data-state="open"]{
+  --tw-enter-scale: .9;
+}
+.data-\[state\=open\]\:zoom-in-95[data-state="open"]{
+  --tw-enter-scale: .95;
+}
+.data-\[motion\=from-end\]\:slide-in-from-right-52[data-motion="from-end"]{
+  --tw-enter-translate-x: 13rem;
+}
+.data-\[motion\=from-start\]\:slide-in-from-left-52[data-motion="from-start"]{
+  --tw-enter-translate-x: -13rem;
+}
+.data-\[motion\=to-end\]\:slide-out-to-right-52[data-motion="to-end"]{
+  --tw-exit-translate-x: 13rem;
+}
+.data-\[motion\=to-start\]\:slide-out-to-left-52[data-motion="to-start"]{
+  --tw-exit-translate-x: -13rem;
+}
+.data-\[side\=bottom\]\:slide-in-from-top-2[data-side="bottom"]{
+  --tw-enter-translate-y: -0.5rem;
+}
+.data-\[side\=left\]\:slide-in-from-right-2[data-side="left"]{
+  --tw-enter-translate-x: 0.5rem;
+}
+.data-\[side\=right\]\:slide-in-from-left-2[data-side="right"]{
+  --tw-enter-translate-x: -0.5rem;
+}
+.data-\[side\=top\]\:slide-in-from-bottom-2[data-side="top"]{
+  --tw-enter-translate-y: 0.5rem;
+}
+.data-\[state\=closed\]\:slide-out-to-bottom[data-state="closed"]{
+  --tw-exit-translate-y: 100%;
+}
+.data-\[state\=closed\]\:slide-out-to-left[data-state="closed"]{
+  --tw-exit-translate-x: -100%;
+}
+.data-\[state\=closed\]\:slide-out-to-left-1\/2[data-state="closed"]{
+  --tw-exit-translate-x: -50%;
+}
+.data-\[state\=closed\]\:slide-out-to-right[data-state="closed"]{
+  --tw-exit-translate-x: 100%;
+}
+.data-\[state\=closed\]\:slide-out-to-top[data-state="closed"]{
+  --tw-exit-translate-y: -100%;
+}
+.data-\[state\=closed\]\:slide-out-to-top-\[48\%\][data-state="closed"]{
+  --tw-exit-translate-y: -48%;
+}
+.data-\[state\=open\]\:slide-in-from-bottom[data-state="open"]{
+  --tw-enter-translate-y: 100%;
+}
+.data-\[state\=open\]\:slide-in-from-left[data-state="open"]{
+  --tw-enter-translate-x: -100%;
+}
+.data-\[state\=open\]\:slide-in-from-left-1\/2[data-state="open"]{
+  --tw-enter-translate-x: -50%;
+}
+.data-\[state\=open\]\:slide-in-from-right[data-state="open"]{
+  --tw-enter-translate-x: 100%;
+}
+.data-\[state\=open\]\:slide-in-from-top[data-state="open"]{
+  --tw-enter-translate-y: -100%;
+}
+.data-\[state\=open\]\:slide-in-from-top-\[48\%\][data-state="open"]{
+  --tw-enter-translate-y: -48%;
+}
+.data-\[state\=closed\]\:duration-300[data-state="closed"]{
+  animation-duration: 300ms;
+}
+.data-\[state\=open\]\:duration-500[data-state="open"]{
+  animation-duration: 500ms;
+}
+  .data-\[motion\^\=from-\]\:animate-in[data-motion^="from-"] {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+  .data-\[state\=open\]\:animate-in[data-state="open"] {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+  .data-\[state\=visible\]\:animate-in[data-state="visible"] {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  .data-\[motion\^\=from-\]\:fade-in[data-motion^="from-"] {
+    animation-name: fadeIn;
+  }
+
+  .data-\[state\=visible\]\:fade-in[data-state="visible"] {
+    animation-name: fadeIn;
+  }
+.data-\[panel-group-direction\=vertical\]\:after\:left-0[data-panel-group-direction="vertical"]::after{
+  content: var(--tw-content);
+  left: 0px;
+}
+.data-\[panel-group-direction\=vertical\]\:after\:h-1[data-panel-group-direction="vertical"]::after{
+  content: var(--tw-content);
+  height: 0.25rem;
+}
+.data-\[panel-group-direction\=vertical\]\:after\:w-full[data-panel-group-direction="vertical"]::after{
+  content: var(--tw-content);
+  width: 100%;
+}
+.data-\[panel-group-direction\=vertical\]\:after\:-translate-y-1\/2[data-panel-group-direction="vertical"]::after{
+  content: var(--tw-content);
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[panel-group-direction\=vertical\]\:after\:translate-x-0[data-panel-group-direction="vertical"]::after{
+  content: var(--tw-content);
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.data-\[state\=open\]\:hover\:bg-accent:hover[data-state="open"]{
+  background-color: hsl(var(--accent));
+}
+.data-\[state\=open\]\:focus\:bg-accent:focus[data-state="open"]{
+  background-color: hsl(var(--accent));
+}
+.group\/day[data-focused="true"] .group-data-\[focused\=true\]\/day\:relative{
+  position: relative;
+}
+.group\/day[data-focused="true"] .group-data-\[focused\=true\]\/day\:z-10{
+  z-index: 10;
+}
+.group[data-state="open"] .group-data-\[state\=open\]\:rotate-180{
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group\/day[data-focused="true"] .group-data-\[focused\=true\]\/day\:border-ring{
+  border-color: hsl(var(--ring));
+}
+.group\/day[data-focused="true"] .group-data-\[focused\=true\]\/day\:ring-\[3px\]{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.group\/day[data-focused="true"] .group-data-\[focused\=true\]\/day\:ring-ring\/50{
+  --tw-ring-color: hsl(var(--ring) / 0.5);
+}
+@media (min-width: 640px){
+
+  .sm\:mb-20{
+    margin-bottom: 5rem;
+  }
+
+  .sm\:mt-0{
+    margin-top: 0px;
+  }
+
+  .sm\:max-w-sm{
+    max-width: 24rem;
+  }
+
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+
+  .sm\:items-center{
+    align-items: center;
+  }
+
+  .sm\:justify-end{
+    justify-content: flex-end;
+  }
+
+  .sm\:gap-2\.5{
+    gap: 0.625rem;
+  }
+
+  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .sm\:rounded-lg{
+    border-radius: var(--radius);
+  }
+
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-28{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .sm\:pb-28{
+    padding-bottom: 7rem;
+  }
+
+  .sm\:pt-48{
+    padding-top: 12rem;
+  }
+
+  .sm\:text-left{
+    text-align: left;
+  }
+
+  .sm\:text-\[15px\]{
+    font-size: 15px;
+  }
+}
+@media (min-width: 768px){
+
+  .md\:absolute{
+    position: absolute;
+  }
+
+  .md\:mb-16{
+    margin-bottom: 4rem;
+  }
+
+  .md\:mb-20{
+    margin-bottom: 5rem;
+  }
+
+  .md\:h-20{
+    height: 5rem;
+  }
+
+  .md\:max-h-12{
+    max-height: 3rem;
+  }
+
+  .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\]{
+    width: var(--radix-navigation-menu-viewport-width);
+  }
+
+  .md\:w-auto{
+    width: auto;
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:items-center{
+    align-items: center;
+  }
+
+  .md\:gap-10{
+    gap: 2.5rem;
+  }
+
+  .md\:gap-14{
+    gap: 3.5rem;
+  }
+
+  .md\:gap-16{
+    gap: 4rem;
+  }
+
+  .md\:gap-5{
+    gap: 1.25rem;
+  }
+
+  .md\:gap-8{
+    gap: 2rem;
+  }
+
+  .md\:border-b-0{
+    border-bottom-width: 0px;
+  }
+
+  .md\:border-r{
+    border-right-width: 1px;
+  }
+
+  .md\:px-14{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .md\:py-16{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:py-20{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .md\:py-28{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .md\:py-36{
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .md\:pb-24{
+    padding-bottom: 6rem;
+  }
+
+  .md\:pb-36{
+    padding-bottom: 9rem;
+  }
+
+  .md\:pl-10{
+    padding-left: 2.5rem;
+  }
+
+  .md\:pr-14{
+    padding-right: 3.5rem;
+  }
+
+  .md\:pt-56{
+    padding-top: 14rem;
+  }
+
+  .md\:text-2xl{
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-8xl{
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .md\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:first\:pl-0:first-child{
+    padding-left: 0px;
+  }
+
+  .md\:first\:pr-14:first-child{
+    padding-right: 3.5rem;
+  }
+
+  .md\:last\:border-r-0:last-child{
+    border-right-width: 0px;
+  }
+}
+@media (min-width: 1024px){
+
+  .lg\:static{
+    position: static;
+  }
+
+  .lg\:inset-0{
+    inset: 0px;
+  }
+
+  .lg\:block{
+    display: block;
+  }
+
+  .lg\:flex{
+    display: flex;
+  }
+
+  .lg\:inline-flex{
+    display: inline-flex;
+  }
+
+  .lg\:hidden{
+    display: none;
+  }
+
+  .lg\:translate-x-0{
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .lg\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-5{
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .lg\:gap-20{
+    gap: 5rem;
+  }
+
+  .lg\:p-6{
+    padding: 1.5rem;
+  }
+
+  .lg\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .lg\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .lg\:py-36{
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+
+  .lg\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+}
+@media (prefers-color-scheme: dark){
+
+  .dark\:border-destructive{
+    border-color: hsl(var(--destructive));
+  }
+}
+.\[\&\:first-child\[data-selected\=true\]_button\]\:rounded-l-md:first-child[data-selected=true] button{
+  border-top-left-radius: calc(var(--radius) - 2px);
+  border-bottom-left-radius: calc(var(--radius) - 2px);
+}
+.\[\&\:has\(\[role\=checkbox\]\)\]\:pr-0:has([role=checkbox]){
+  padding-right: 0px;
+}
+.\[\&\:last-child\[data-selected\=true\]_button\]\:rounded-r-md:last-child[data-selected=true] button{
+  border-top-right-radius: calc(var(--radius) - 2px);
+  border-bottom-right-radius: calc(var(--radius) - 2px);
+}
+.\[\&\>\*\]\:list-item>*{
+  display: list-item;
+}
+.\[\&\>span\]\:line-clamp-1>span{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.\[\&\>span\]\:text-xs>span{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.\[\&\>span\]\:opacity-70>span{
+  opacity: 0.7;
+}
+.\[\&\>svg\+div\]\:translate-y-\[-3px\]>svg+div{
+  --tw-translate-y: -3px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.\[\&\>svg\]\:absolute>svg{
+  position: absolute;
+}
+.\[\&\>svg\]\:left-4>svg{
+  left: 1rem;
+}
+.\[\&\>svg\]\:top-4>svg{
+  top: 1rem;
+}
+.\[\&\>svg\]\:size-3\.5>svg{
+  width: 0.875rem;
+  height: 0.875rem;
+}
+.\[\&\>svg\]\:h-3\.5>svg{
+  height: 0.875rem;
+}
+.\[\&\>svg\]\:w-3\.5>svg{
+  width: 0.875rem;
+}
+.\[\&\>svg\]\:text-destructive>svg{
+  color: hsl(var(--destructive));
+}
+.\[\&\>svg\]\:text-foreground>svg{
+  color: hsl(var(--foreground));
+}
+.\[\&\>svg\]\:text-muted-foreground>svg{
+  color: hsl(var(--muted-foreground));
+}
+.\[\&\>svg\~\*\]\:pl-7>svg~*{
+  padding-left: 1.75rem;
+}
+.\[\&\>tr\]\:last\:border-b-0:last-child>tr{
+  border-bottom-width: 0px;
+}
+.\[\&\[data-panel-group-direction\=vertical\]\>div\]\:rotate-90[data-panel-group-direction=vertical]>div{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.\[\&\[data-state\=open\]\>svg\]\:rotate-180[data-state=open]>svg{
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.\[\&_\[cmdk-group-heading\]\]\:px-2 [cmdk-group-heading]{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.\[\&_\[cmdk-group-heading\]\]\:py-1\.5 [cmdk-group-heading]{
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.\[\&_\[cmdk-group-heading\]\]\:text-xs [cmdk-group-heading]{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.\[\&_\[cmdk-group-heading\]\]\:font-medium [cmdk-group-heading]{
+  font-weight: 500;
+}
+.\[\&_\[cmdk-group-heading\]\]\:text-muted-foreground [cmdk-group-heading]{
+  color: hsl(var(--muted-foreground));
+}
+.\[\&_\[cmdk-group\]\:not\(\[hidden\]\)_\~\[cmdk-group\]\]\:pt-0 [cmdk-group]:not([hidden]) ~[cmdk-group]{
+  padding-top: 0px;
+}
+.\[\&_\[cmdk-group\]\]\:px-2 [cmdk-group]{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.\[\&_\[cmdk-input-wrapper\]_svg\]\:h-5 [cmdk-input-wrapper] svg{
+  height: 1.25rem;
+}
+.\[\&_\[cmdk-input-wrapper\]_svg\]\:w-5 [cmdk-input-wrapper] svg{
+  width: 1.25rem;
+}
+.\[\&_\[cmdk-input\]\]\:h-12 [cmdk-input]{
+  height: 3rem;
+}
+.\[\&_\[cmdk-item\]\]\:px-2 [cmdk-item]{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.\[\&_\[cmdk-item\]\]\:py-3 [cmdk-item]{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.\[\&_\[cmdk-item\]_svg\]\:h-5 [cmdk-item] svg{
+  height: 1.25rem;
+}
+.\[\&_\[cmdk-item\]_svg\]\:w-5 [cmdk-item] svg{
+  width: 1.25rem;
+}
+.\[\&_p\]\:leading-relaxed p{
+  line-height: 1.625;
+}
+.\[\&_svg\]\:pointer-events-none svg{
+  pointer-events: none;
+}
+.\[\&_svg\]\:size-4 svg{
+  width: 1rem;
+  height: 1rem;
+}
+.\[\&_svg\]\:shrink-0 svg{
+  flex-shrink: 0;
+}
+.\[\&_tr\:last-child\]\:border-0 tr:last-child{
+  border-width: 0px;
+}
+.\[\&_tr\]\:border-b tr{
+  border-bottom-width: 1px;
+}
+[data-slot=card-content] .\[\[data-slot\=card-content\]_\&\]\:bg-transparent{
+  background-color: transparent;
+}
+[data-slot=popover-content] .\[\[data-slot\=popover-content\]_\&\]\:bg-transparent{
+  background-color: transparent;
+}
+</style><meta name="robots" content="noindex, nofollow"><style id="airo-dev-tools-styles">
+    [data-airo-dev-tools] {
+      /* Fonts */
+      --font-heading: system-ui, sans-serif !important;
+      font-family: system-ui, sans-serif;
+
+      /* Brand/Primary Colors */
+      --color-primary: #6b46c1;
+      --color-primary-hover: #5a32b0;
+      --color-primary-light: #f5f3ff;
+
+      /* Interactive/Action Colors */
+      --color-interactive: #8b5cf6;
+      --color-interactive-hover: #2563eb;
+      --color-interactive-bg: #eff6ff;
+      --color-interactive-bg-hover: #dbeafe;
+      --color-interactive-border: #bfdbfe;
+      --color-interactive-border-hover: #93c5fd;
+
+      /* Status Colors */
+      --color-success: #059669;
+      --color-success-bg: #ecfdf5;
+      --color-success-bg-hover: #d1fae5;
+      --color-success-border: #a7f3d0;
+      --color-success-border-hover: #6ee7b7;
+      --color-error: #dc2626;
+      --color-error-gradient-start: #ef4444;
+      --color-error-gradient-end: #dc2626;
+      --color-warning: #d97706;
+
+      /* Neutral/Surface Colors */
+      --color-surface: #ffffff;
+      --color-surface-hover: #f9fafb;
+      --color-surface-overlay: rgba(0, 0, 0, 0.15);
+      --color-border: #d1d5db;
+      --color-border-light: #e5e7eb;
+
+      /* Text Colors */
+      --color-text-primary: #111111;
+      --color-text-secondary: #374151;
+      --color-text-tertiary: #6b7280;
+      --color-text-muted: #9ca3af;
+
+      /* Special Purpose */
+      --color-accent-purple: #8b5cf6;
+      --color-accent-purple-bg: #f5f3ff;
+      --color-accent-purple-bg-hover: #ede9fe;
+      --color-accent-purple-border: #ddd6fe;
+      --color-accent-purple-border-hover: #c4b5fd;
+      --color-accent-pink: #db2777;
+      --color-selection-outline: #10b981;
+
+      /* Color Palette (for ElementEditor presets) */
+      --color-black: #111827;
+      --color-gray-600: #4b5563;
+      --color-blue-600: #2563eb;
+      --color-purple-600: #9333ea;
+      --color-green-600: #16a34a;
+      --color-red-600: #dc2626;
+      --color-orange-600: #d97706;
+      --color-pink-600: #db2777;
+      --color-gray-100: #f3f4f6;
+      --color-blue-100: #dbeafe;
+      --color-purple-100: #e9d5ff;
+      --color-green-100: #dcfce7;
+      --color-red-100: #fee2e2;
+      --color-yellow-100: #fef3c7;
+      --color-pink-100: #fce7f3;
+    }
+
+    /* Editable compliance field spans (preview-only; never shipped to publish).
+       Templates vary (dark, light, colored backgrounds), so the highlight is
+       derived from currentColor — the page's own text color — rather than a
+       fixed palette. The page's text already contrasts with its background, so
+       a faint tint of that same color and a currentColor underline are
+       guaranteed to contrast too. The text color itself is NEVER overridden, so
+       the value stays as legible as the surrounding copy. */
+    .airo-editable-field {
+      background-color: color-mix(in srgb, currentColor 14%, transparent);
+      border-bottom: 1px dashed currentColor;
+      border-radius: 2px;
+      padding: 0 2px;
+      cursor: text;
+      transition: background-color 120ms ease;
+    }
+    .airo-editable-field:hover {
+      background-color: color-mix(in srgb, currentColor 24%, transparent);
+    }
+    .airo-editable-field::after {
+      content: "\270E";
+      font-size: 0.75em;
+      margin-left: 3px;
+      color: currentColor;
+      opacity: 0.65;
+      user-select: none;
+    }
+    .airo-editable-field:focus {
+      outline: 2px solid currentColor;
+      outline-offset: 1px;
+      background-color: color-mix(in srgb, currentColor 24%, transparent);
+    }
+    .airo-editable-field:focus::after { content: ""; }
+
+    /* Rejected input (failed data-type validation) — brief red flash. */
+    .airo-editable-field-invalid {
+      background-color: color-mix(in srgb, #dc2626 28%, transparent) !important;
+      border-bottom-color: #dc2626 !important;
+    }
+
+    /* us_states dropdown. Transparent chrome + currentColor so it inherits the
+       template's text color and stays legible on any background. The pencil
+       glyph is suppressed for select-backed fields. */
+    .airo-editable-field-select { padding: 0; }
+    .airo-editable-field-select::after { content: ""; }
+    .airo-state-select {
+      font: inherit;
+      color: currentColor;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px dashed currentColor;
+      padding: 0 18px 0 2px;
+      margin: 0;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='currentColor' stroke-width='1.5'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 2px center;
+    }
+    .airo-state-select:focus {
+      outline: 2px solid currentColor;
+      outline-offset: 1px;
+    }
+    /* Option list renders in the OS popup; force readable colors there. */
+    .airo-state-select option {
+      color: #111111;
+      background-color: #ffffff;
+    }
+
+    /* Per-section boolean toggle control. */
+    .airo-section-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 6px;
+      padding: 1px 8px;
+      font-family: system-ui, sans-serif;
+      font-size: 0.7rem;
+      line-height: 1.4;
+      color: #5a32b0;
+      background-color: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      border-radius: 9999px;
+      cursor: pointer;
+    }
+    .airo-section-toggle[aria-pressed="true"] {
+      color: #ffffff;
+      background-color: #8b5cf6;
+      border-color: #8b5cf6;
+    }
+    .airo-section-toggle:hover {
+      border-color: #c4b5fd;
+    }
+  </style><title data-dev-file="/app/src/pages/index.tsx" data-dev-line="77" data-dev-id="bf619f" data-rh="data-dev-file,data-dev-line,data-dev-id">ATIRAYA — Stay Somewhere Remarkable</title><link rel="canonical" href="https://atiraya.com/" data-dev-file="/app/src/pages/index.tsx" data-dev-line="82" data-dev-id="e4d38b" data-rh="true"><meta name="description" content="Thoughtful stays. Beautiful places. Experiences that stay with you. ATIRAYA is a collection of hotels, resorts, retreats, and residences in remarkable destinations." data-dev-file="/app/src/pages/index.tsx" data-dev-line="78" data-dev-id="f4b9e4" data-rh="true"><meta property="og:title" content="ATIRAYA — Stay Somewhere Remarkable" data-dev-file="/app/src/pages/index.tsx" data-dev-line="83" data-dev-id="f4b9e5" data-rh="true"><meta property="og:description" content="Thoughtful stays. Beautiful places. Experiences that stay with you." data-dev-file="/app/src/pages/index.tsx" data-dev-line="84" data-dev-id="f4b9e6" data-rh="true"><meta property="og:type" content="website" data-dev-file="/app/src/pages/index.tsx" data-dev-line="88" data-dev-id="f4b9e7" data-rh="true"><meta property="og:url" content="https://atiraya.com" data-dev-file="/app/src/pages/index.tsx" data-dev-line="89" data-dev-id="f4b9e8" data-rh="true"><meta property="og:image" content="https://atiraya.com/og-image.jpg" data-dev-file="/app/src/pages/index.tsx" data-dev-line="90" data-dev-id="f4b9e9" data-rh="true"><meta name="twitter:card" content="summary_large_image" data-dev-file="/app/src/pages/index.tsx" data-dev-line="91" data-dev-id="f4b9ea" data-rh="true"><meta name="twitter:title" content="ATIRAYA — Stay Somewhere Remarkable" data-dev-file="/app/src/pages/index.tsx" data-dev-line="92" data-dev-id="f4b9eb" data-rh="true"><meta name="twitter:description" content="Thoughtful stays. Beautiful places. Experiences that stay with you." data-dev-file="/app/src/pages/index.tsx" data-dev-line="93" data-dev-id="f4b9ec" data-rh="true"><meta name="twitter:image" content="https://atiraya.com/og-image.jpg" data-dev-file="/app/src/pages/index.tsx" data-dev-line="97" data-dev-id="f4b9ed" data-rh="true"><script type="application/ld+json" data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="98" data-dev-id="b31892" data-rh="true">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://atiraya.com/#website","name":"ATIRAYA","url":"https://atiraya.com/"},{"@type":"Organization","@id":"https://atiraya.com/#organization","name":"ATIRAYA","url":"https://atiraya.com/","description":"A collection of thoughtfully designed hotels, resorts, retreats, and residences in beautiful destinations."},{"@type":"WebPage","@id":"https://atiraya.com/#webpage","url":"https://atiraya.com/","name":"ATIRAYA — Stay Somewhere Remarkable","isPartOf":{"@id":"https://atiraya.com/#website"},"about":{"@id":"https://atiraya.com/#organization"},"datePublished":"2026-08-30","dateModified":"2026-08-30"}]}</script><script data-fs-namespace="FS" data-fs-integrations="" async="" src="./ATIRAYA — Stay Somewhere Remarkable_files/integrations"></script><script src="./ATIRAYA — Stay Somewhere Remarkable_files/scc-c2.min.js.download" async=""></script><style id="airo-dev-tools-tooltip-styles">
+  .airo-tooltip-root {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .airo-tooltip-bubble {
+    position: fixed;
+    transform: translateX(-50%) translateY(calc(-100% - 5px));
+    z-index: 10001;
+    padding: 8px 12px;
+    background: #1a1a1a;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: system-ui, sans-serif;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: airoTooltipFadeInUp 0.15s ease-out;
+  }
+
+  .airo-tooltip-bubble[data-placement="below"] {
+    transform: translateX(-50%) translateY(5px);
+    animation: airoTooltipFadeInDown 0.15s ease-out;
+  }
+
+  .airo-tooltip-bubble[data-exiting] {
+    animation: airoTooltipFadeOut var(--tooltip-exit-duration, 0.12s) ease-in forwards;
+  }
+
+  .airo-tooltip-arrow {
+    position: absolute;
+    left: var(--airo-tooltip-arrow-left, 50%);
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #1a1a1a;
+  }
+
+  .airo-tooltip-bubble[data-placement="below"] .airo-tooltip-arrow {
+    bottom: auto;
+    top: -6px;
+    border-top: none;
+    border-bottom: 6px solid #1a1a1a;
+  }
+
+  @keyframes airoTooltipFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(calc(-100% + 8px));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(calc(-100% - 5px));
+    }
+  }
+
+  @keyframes airoTooltipFadeInDown {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-3px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(5px);
+    }
+  }
+
+  @keyframes airoTooltipFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .airo-tooltip-bubble,
+    .airo-tooltip-bubble[data-placement="below"] { animation: none; }
+  }
+</style><style id="edit-mode-keyframes">@keyframes editBarFadeIn { from { opacity: 0; scale: 0.92; } to { opacity: 1; scale: 1; } }</style></head>
+  <body class="fs-unmask-airo-app-builder" inject_vt_svd="true">
+    <div id="app" class="fs-unmask-airo-app-builder"><div class="min-h-screen bg-background flex flex-col" data-dev-file="/app/src/layouts/Website.tsx" data-dev-line="74" data-dev-id="24a66c"><header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background/95 backdrop-blur-sm shadow-sm" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="50" data-dev-id="d07c01"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="57" data-dev-id="24b095"><div class="flex items-center justify-between h-16 md:h-20" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="58" data-dev-id="7b0429"><a aria-label="ATIRAYA — Home" class="flex items-center self-center" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="60" data-dev-id="868d08" href="https://lcrhtzzbes.preview.c40.airoapp.ai/" data-discover="true"><img alt="ATIRAYA" class="block h-auto max-h-10 md:max-h-12 w-auto object-contain transition-all duration-300" width="180" height="48" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="61" data-dev-id="979716" src="./ATIRAYA — Stay Somewhere Remarkable_files/horizontal" style="filter: none;" data-airo-logo-corrected="horizontal"></a><nav aria-label="Main navigation" class="hidden lg:flex items-center gap-8" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="71" data-dev-id="5f48bf"><a class="text-xs tracking-[0.15em] uppercase font-light transition-colors duration-200 hover:opacity-60 text-foreground" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="73" data-dev-id="090cde" href="https://lcrhtzzbes.preview.c40.airoapp.ai/destinations" data-discover="true">Destinations</a><a class="text-xs tracking-[0.15em] uppercase font-light transition-colors duration-200 hover:opacity-60 text-foreground" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="73" data-dev-id="090cde" href="https://lcrhtzzbes.preview.c40.airoapp.ai/stay" data-discover="true">Stay</a><a class="text-xs tracking-[0.15em] uppercase font-light transition-colors duration-200 hover:opacity-60 text-foreground" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="73" data-dev-id="090cde" href="https://lcrhtzzbes.preview.c40.airoapp.ai/experiences" data-discover="true">Experiences</a><a class="text-xs tracking-[0.15em] uppercase font-light transition-colors duration-200 hover:opacity-60 text-foreground" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="73" data-dev-id="090cde" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Our Story</a><a class="text-xs tracking-[0.15em] uppercase font-light transition-colors duration-200 hover:opacity-60 text-foreground" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="73" data-dev-id="090cde" href="https://lcrhtzzbes.preview.c40.airoapp.ai/contact" data-discover="true">Contact</a></nav><div class="flex items-center gap-4" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="85" data-dev-id="aeb6bd"><a class="hidden lg:inline-flex items-center px-5 py-2.5 text-xs tracking-[0.12em] uppercase font-light border border-border text-foreground transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:border-primary" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="86" data-dev-id="6d111c" href="https://lcrhtzzbes.preview.c40.airoapp.ai/contact" data-discover="true">Plan Your Stay</a><button class="lg:hidden p-1 transition-colors text-foreground" aria-label="Open menu" aria-expanded="false" data-dev-dynamic="true" data-dev-bound-text="true" data-dev-bound-source-kind="bound-expression" data-dev-bound-expression-hash="sha256:847edae6149857862959410311e0cf7522f761f05e0ca0568ad91e170273b4b2" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="92" data-dev-id="25760a"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="98" data-dev-id="268b24"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button></div></div></div></header><div class="fixed inset-0 z-40 bg-background flex flex-col transition-all duration-500 opacity-0 pointer-events-none" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="106" data-dev-id="3e701b"><div class="flex items-center justify-between h-16 px-6" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="111" data-dev-id="a3d02f"><a class="flex items-center" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="112" data-dev-id="dcd64e" href="https://lcrhtzzbes.preview.c40.airoapp.ai/" data-discover="true"><img alt="ATIRAYA" class="block h-auto max-h-10 w-auto object-contain" width="160" height="40" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="113" data-dev-id="2d3cdc" src="./ATIRAYA — Stay Somewhere Remarkable_files/horizontal" style="filter: none;" data-airo-logo-corrected="horizontal"></a><button class="p-1 text-foreground" aria-label="Close menu" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="121" data-dev-id="9b4fbc"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="126" data-dev-id="184845"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button></div><nav aria-label="Mobile navigation" class="flex flex-col justify-center flex-1 px-8 gap-8" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="129" data-dev-id="546231"><a class="font-heading text-3xl font-light text-foreground hover:text-primary transition-colors" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="134" data-dev-id="78d210" href="https://lcrhtzzbes.preview.c40.airoapp.ai/destinations" data-discover="true">Destinations</a><a class="font-heading text-3xl font-light text-foreground hover:text-primary transition-colors" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="134" data-dev-id="78d210" href="https://lcrhtzzbes.preview.c40.airoapp.ai/stay" data-discover="true">Stay</a><a class="font-heading text-3xl font-light text-foreground hover:text-primary transition-colors" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="134" data-dev-id="78d210" href="https://lcrhtzzbes.preview.c40.airoapp.ai/experiences" data-discover="true">Experiences</a><a class="font-heading text-3xl font-light text-foreground hover:text-primary transition-colors" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="134" data-dev-id="78d210" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Our Story</a><a class="font-heading text-3xl font-light text-foreground hover:text-primary transition-colors" data-dev-conformable-array="NAV_ITEMS" data-dev-conformable-page="src/layouts/parts/Header.tsx" data-dev-conformable-id="L10C6" data-dev-dynamic="true" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="134" data-dev-id="78d210" href="https://lcrhtzzbes.preview.c40.airoapp.ai/contact" data-discover="true">Contact</a><a class="mt-4 inline-flex items-center px-6 py-3 text-xs tracking-[0.15em] uppercase font-light border border-primary text-primary w-fit hover:bg-primary hover:text-primary-foreground transition-colors" data-dev-file="/app/src/layouts/parts/Header.tsx" data-dev-line="143" data-dev-id="78d211" href="https://lcrhtzzbes.preview.c40.airoapp.ai/contact" data-discover="true">Plan Your Stay</a></nav></div><main data-dev-file="/app/src/pages/index.tsx" data-dev-line="101" data-dev-id="641c92"><section class="relative h-screen min-h-[600px] flex items-end" data-dev-file="/app/src/pages/index.tsx" data-dev-line="103" data-dev-id="8c0c78"><img alt="Luxury resort integrated into tropical nature" class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" width="1920" height="1080" data-dev-file="/app/src/pages/index.tsx" data-dev-line="104" data-dev-id="faea86" src="./ATIRAYA — Stay Somewhere Remarkable_files/hero"><div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/65 pointer-events-none" data-dev-file="/app/src/pages/index.tsx" data-dev-line="114" data-dev-id="9e7e4c"></div><div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-16 md:pb-24" data-dev-file="/app/src/pages/index.tsx" data-dev-line="116" data-dev-id="9e7e4d"><div class="max-w-2xl" data-dev-file="/app/src/pages/index.tsx" data-dev-line="117" data-dev-id="622cc5"><h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-5" data-dev-content-key="home.hero.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="123" data-dev-id="1ac913" style="white-space: pre-line; opacity: 1; transform: none;">Stay Somewhere Remarkable.</h1><p class="text-white/80 text-base md:text-lg font-light leading-relaxed mb-8 max-w-lg" data-dev-content-key="home.hero.subheadline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="129" data-dev-id="a3d8ca" style="white-space: pre-line; opacity: 1; transform: none;">Thoughtful stays. Beautiful places. Experiences that stay with you.</p><div class="flex flex-wrap gap-4" data-dev-file="/app/src/pages/index.tsx" data-dev-line="135" data-dev-id="4b9e3d" style="opacity: 1; transform: none;"><a class="inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground text-xs tracking-[0.15em] uppercase font-light hover:bg-primary/90 transition-colors" data-dev-content-key="home.hero.primaryCta" data-dev-file="/app/src/pages/index.tsx" data-dev-line="136" data-dev-id="8a889c" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Discover Atiraya</a><button class="inline-flex items-center gap-2 px-7 py-3.5 border border-white/60 text-white text-xs tracking-[0.15em] uppercase font-light hover:bg-white/10 transition-colors" data-dev-content-key="home.hero.secondaryCta" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="142" data-dev-id="7ecd8a" style="white-space: pre-line;">Explore Destinations</button></div></div></div></section><section class="py-20 md:py-28 lg:py-36" data-dev-file="/app/src/pages/index.tsx" data-dev-line="154" data-dev-id="8c0c79"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/pages/index.tsx" data-dev-line="155" data-dev-id="98bb0d"><div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center" data-dev-file="/app/src/pages/index.tsx" data-dev-line="156" data-dev-id="9b08a1"><div data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="157" data-dev-id="01df99"><p class="text-xs tracking-[0.2em] uppercase text-muted-foreground font-light mb-4" data-dev-content-key="home.experience.eyebrow" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="163" data-dev-id="599f1e" style="white-space: pre-line; opacity: 1; transform: none;">The Atiraya Experience</p><h2 class="font-heading text-4xl md:text-5xl font-light text-foreground leading-tight mb-8" data-dev-content-key="home.experience.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="169" data-dev-id="895e28" style="white-space: pre-line; opacity: 1; transform: none;">Where place becomes the experience.</h2><p class="text-muted-foreground font-light leading-relaxed mb-4 text-base" data-dev-content-list="home.experience.body" data-dev-content-list-index="0" data-dev-item-id="exp-1" data-dev-content-key-template="home.experience.body[].text" data-dev-content-key="home.experience.body[@exp-1].text" data-dev-file="/app/src/pages/index.tsx" data-dev-line="176" data-dev-id="599f1f" style="white-space: pre-line; opacity: 1; transform: none;">Atiraya is a collection of thoughtfully designed hotels, resorts, retreats, and residences in destinations that move you.</p><p class="text-muted-foreground font-light leading-relaxed mb-4 text-base" data-dev-content-list="home.experience.body" data-dev-content-list-index="1" data-dev-item-id="exp-2" data-dev-content-key-template="home.experience.body[].text" data-dev-content-key="home.experience.body[@exp-2].text" data-dev-file="/app/src/pages/index.tsx" data-dev-line="176" data-dev-id="599f1f" style="white-space: pre-line; opacity: 1; transform: none;">Each property brings together considered architecture, its natural surroundings, local character, and genuine hospitality — creating stays that feel both distinctive and deeply personal.</p><div class="mt-8" data-dev-file="/app/src/pages/index.tsx" data-dev-line="184" data-dev-id="8c4991" style="opacity: 1; transform: none;"><a class="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-light text-primary border-b border-primary pb-0.5 hover:opacity-70 transition-opacity" data-dev-file="/app/src/pages/index.tsx" data-dev-line="185" data-dev-id="96ad70" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Our Story <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" data-dev-file="/app/src/pages/index.tsx" data-dev-line="189" data-dev-id="54474a"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>              </div><div class="aspect-[4/5] overflow-hidden" data-dev-file="/app/src/pages/index.tsx" data-dev-line="193" data-dev-id="01df9a" style="opacity: 1; transform: none;"><img alt="Elegant hotel interior with warm light" class="w-full h-full object-cover" loading="lazy" width="800" height="1000" data-dev-file="/app/src/pages/index.tsx" data-dev-line="200" data-dev-id="7f0f28" src="./ATIRAYA — Stay Somewhere Remarkable_files/experience"></div></div></div></section><section class="py-20 md:py-28 bg-muted" data-dev-file="/app/src/pages/index.tsx" data-dev-line="214" data-dev-id="8c0c7a"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/pages/index.tsx" data-dev-line="215" data-dev-id="92f7ce"><div class="mb-12 md:mb-16" data-dev-file="/app/src/pages/index.tsx" data-dev-line="216" data-dev-id="704fe6"><p class="text-xs tracking-[0.2em] uppercase text-muted-foreground font-light mb-3" data-dev-content-key="home.destinations.eyebrow" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="223" data-dev-id="15254b" style="white-space: pre-line; opacity: 1; transform: none;">Our Destinations</p><h2 class="font-heading text-4xl md:text-5xl font-light text-foreground leading-tight" data-dev-content-key="home.destinations.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="229" data-dev-id="b5a9f5" style="white-space: pre-line; opacity: 1; transform: none;">Beautiful places, thoughtfully chosen.</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5" data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="237" data-dev-id="fa1222"><div class="group relative overflow-hidden cursor-pointer" data-dev-content-list="home.destinations.items" data-dev-content-list-index="0" data-dev-item-id="dest-1" data-dev-file="/app/src/pages/index.tsx" data-dev-line="239" data-dev-id="2492ba" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden" data-dev-file="/app/src/pages/index.tsx" data-dev-line="247" data-dev-id="872e0e"><img alt="The Coast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="248" data-dev-id="aa649c" src="./ATIRAYA — Stay Somewhere Remarkable_files/coastal-retreat"></div><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" data-dev-file="/app/src/pages/index.tsx" data-dev-line="257" data-dev-id="872e0f"></div><div class="absolute bottom-0 left-0 right-0 p-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="258" data-dev-id="872e10"><p class="text-white/60 text-xs tracking-[0.15em] uppercase font-light mb-1" data-dev-content-key-template="home.destinations.items[].tagline" data-dev-content-key="home.destinations.items[@dest-1].tagline" data-dev-file="/app/src/pages/index.tsx" data-dev-line="259" data-dev-id="b396b1" style="white-space: pre-line;">Where land meets the sea</p><h3 class="font-heading text-2xl font-light text-white mb-2" data-dev-content-key-template="home.destinations.items[].name" data-dev-content-key="home.destinations.items[@dest-1].name" data-dev-file="/app/src/pages/index.tsx" data-dev-line="262" data-dev-id="224c5c" style="white-space: pre-line;">The Coast</h3><p class="text-white/70 text-xs font-light leading-relaxed hidden group-hover:block transition-all" data-dev-content-key-template="home.destinations.items[].description" data-dev-content-key="home.destinations.items[@dest-1].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="265" data-dev-id="b396b2" style="white-space: pre-line;">Clifftop perches and shoreline retreats along India's most beautiful coastlines.</p></div></div><div class="group relative overflow-hidden cursor-pointer" data-dev-content-list="home.destinations.items" data-dev-content-list-index="1" data-dev-item-id="dest-2" data-dev-file="/app/src/pages/index.tsx" data-dev-line="239" data-dev-id="2492ba" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden" data-dev-file="/app/src/pages/index.tsx" data-dev-line="247" data-dev-id="872e0e"><img alt="The Forest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="248" data-dev-id="aa649c" src="./ATIRAYA — Stay Somewhere Remarkable_files/forest-retreat"></div><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" data-dev-file="/app/src/pages/index.tsx" data-dev-line="257" data-dev-id="872e0f"></div><div class="absolute bottom-0 left-0 right-0 p-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="258" data-dev-id="872e10"><p class="text-white/60 text-xs tracking-[0.15em] uppercase font-light mb-1" data-dev-content-key-template="home.destinations.items[].tagline" data-dev-content-key="home.destinations.items[@dest-2].tagline" data-dev-file="/app/src/pages/index.tsx" data-dev-line="259" data-dev-id="b396b1" style="white-space: pre-line;">Deep in the green</p><h3 class="font-heading text-2xl font-light text-white mb-2" data-dev-content-key-template="home.destinations.items[].name" data-dev-content-key="home.destinations.items[@dest-2].name" data-dev-file="/app/src/pages/index.tsx" data-dev-line="262" data-dev-id="224c5c" style="white-space: pre-line;">The Forest</h3><p class="text-white/70 text-xs font-light leading-relaxed hidden group-hover:block transition-all" data-dev-content-key-template="home.destinations.items[].description" data-dev-content-key="home.destinations.items[@dest-2].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="265" data-dev-id="b396b2" style="white-space: pre-line;">Immersive stays within ancient forests, wildlife corridors, and misty canopies.</p></div></div><div class="group relative overflow-hidden cursor-pointer" data-dev-content-list="home.destinations.items" data-dev-content-list-index="2" data-dev-item-id="dest-3" data-dev-file="/app/src/pages/index.tsx" data-dev-line="239" data-dev-id="2492ba" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden" data-dev-file="/app/src/pages/index.tsx" data-dev-line="247" data-dev-id="872e0e"><img alt="The Hills" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="248" data-dev-id="aa649c" src="./ATIRAYA — Stay Somewhere Remarkable_files/mountain-escape"></div><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" data-dev-file="/app/src/pages/index.tsx" data-dev-line="257" data-dev-id="872e0f"></div><div class="absolute bottom-0 left-0 right-0 p-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="258" data-dev-id="872e10"><p class="text-white/60 text-xs tracking-[0.15em] uppercase font-light mb-1" data-dev-content-key-template="home.destinations.items[].tagline" data-dev-content-key="home.destinations.items[@dest-3].tagline" data-dev-file="/app/src/pages/index.tsx" data-dev-line="259" data-dev-id="b396b1" style="white-space: pre-line;">Above the clouds</p><h3 class="font-heading text-2xl font-light text-white mb-2" data-dev-content-key-template="home.destinations.items[].name" data-dev-content-key="home.destinations.items[@dest-3].name" data-dev-file="/app/src/pages/index.tsx" data-dev-line="262" data-dev-id="224c5c" style="white-space: pre-line;">The Hills</h3><p class="text-white/70 text-xs font-light leading-relaxed hidden group-hover:block transition-all" data-dev-content-key-template="home.destinations.items[].description" data-dev-content-key="home.destinations.items[@dest-3].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="265" data-dev-id="b396b2" style="white-space: pre-line;">Mountain escapes where cool air, rolling mist, and sweeping views define the days.</p></div></div><div class="group relative overflow-hidden cursor-pointer" data-dev-content-list="home.destinations.items" data-dev-content-list-index="3" data-dev-item-id="dest-4" data-dev-file="/app/src/pages/index.tsx" data-dev-line="239" data-dev-id="2492ba" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden" data-dev-file="/app/src/pages/index.tsx" data-dev-line="247" data-dev-id="872e0e"><img alt="The Backwaters" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="248" data-dev-id="aa649c" src="./ATIRAYA — Stay Somewhere Remarkable_files/backwater-haven"></div><div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" data-dev-file="/app/src/pages/index.tsx" data-dev-line="257" data-dev-id="872e0f"></div><div class="absolute bottom-0 left-0 right-0 p-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="258" data-dev-id="872e10"><p class="text-white/60 text-xs tracking-[0.15em] uppercase font-light mb-1" data-dev-content-key-template="home.destinations.items[].tagline" data-dev-content-key="home.destinations.items[@dest-4].tagline" data-dev-file="/app/src/pages/index.tsx" data-dev-line="259" data-dev-id="b396b1" style="white-space: pre-line;">Slow water, slow living</p><h3 class="font-heading text-2xl font-light text-white mb-2" data-dev-content-key-template="home.destinations.items[].name" data-dev-content-key="home.destinations.items[@dest-4].name" data-dev-file="/app/src/pages/index.tsx" data-dev-line="262" data-dev-id="224c5c" style="white-space: pre-line;">The Backwaters</h3><p class="text-white/70 text-xs font-light leading-relaxed hidden group-hover:block transition-all" data-dev-content-key-template="home.destinations.items[].description" data-dev-content-key="home.destinations.items[@dest-4].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="265" data-dev-id="b396b2" style="white-space: pre-line;">Serene waterway retreats where time moves at the pace of the tide.</p></div></div></div></div></section><section class="py-20 md:py-28 lg:py-36" data-dev-file="/app/src/pages/index.tsx" data-dev-line="276" data-dev-id="8c0c7b"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/pages/index.tsx" data-dev-line="277" data-dev-id="8d348f"><div class="mb-12 md:mb-16" data-dev-file="/app/src/pages/index.tsx" data-dev-line="278" data-dev-id="977e47"><p class="text-xs tracking-[0.2em] uppercase text-muted-foreground font-light mb-3" data-dev-content-key="home.stayTypes.eyebrow" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="285" data-dev-id="d9f50c" style="white-space: pre-line; opacity: 1; transform: none;">Stay Your Way</p><h2 class="font-heading text-4xl md:text-5xl font-light text-foreground leading-tight" data-dev-content-key="home.stayTypes.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="291" data-dev-id="1471d6" style="white-space: pre-line; opacity: 1; transform: none;">Four ways to experience Atiraya.</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8" data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="299" data-dev-id="591ba3"><div class="group" data-dev-content-list="home.stayTypes.items" data-dev-content-list-index="0" data-dev-item-id="stay-1" data-dev-file="/app/src/pages/index.tsx" data-dev-line="301" data-dev-id="4745db" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="309" data-dev-id="e5f5ef"><img alt="Hotels" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="310" data-dev-id="b1d13d" src="./ATIRAYA — Stay Somewhere Remarkable_files/hotel"></div><h3 class="font-heading text-2xl font-light text-foreground mb-2" data-dev-content-key-template="home.stayTypes.items[].type" data-dev-content-key="home.stayTypes.items[@stay-1].type" data-dev-file="/app/src/pages/index.tsx" data-dev-line="319" data-dev-id="0ffb07" style="white-space: pre-line;">Hotels</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.stayTypes.items[].description" data-dev-content-key="home.stayTypes.items[@stay-1].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="322" data-dev-id="009bfc" style="white-space: pre-line;">Intimate urban and destination hotels where design, service, and local character come together.</p></div><div class="group" data-dev-content-list="home.stayTypes.items" data-dev-content-list-index="1" data-dev-item-id="stay-2" data-dev-file="/app/src/pages/index.tsx" data-dev-line="301" data-dev-id="4745db" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="309" data-dev-id="e5f5ef"><img alt="Resorts" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="310" data-dev-id="b1d13d" src="./ATIRAYA — Stay Somewhere Remarkable_files/resort"></div><h3 class="font-heading text-2xl font-light text-foreground mb-2" data-dev-content-key-template="home.stayTypes.items[].type" data-dev-content-key="home.stayTypes.items[@stay-2].type" data-dev-file="/app/src/pages/index.tsx" data-dev-line="319" data-dev-id="0ffb07" style="white-space: pre-line;">Resorts</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.stayTypes.items[].description" data-dev-content-key="home.stayTypes.items[@stay-2].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="322" data-dev-id="009bfc" style="white-space: pre-line;">Expansive escapes with pools, gardens, and curated experiences set within remarkable landscapes.</p></div><div class="group" data-dev-content-list="home.stayTypes.items" data-dev-content-list-index="2" data-dev-item-id="stay-3" data-dev-file="/app/src/pages/index.tsx" data-dev-line="301" data-dev-id="4745db" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="309" data-dev-id="e5f5ef"><img alt="Retreats" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="310" data-dev-id="b1d13d" src="./ATIRAYA — Stay Somewhere Remarkable_files/retreat"></div><h3 class="font-heading text-2xl font-light text-foreground mb-2" data-dev-content-key-template="home.stayTypes.items[].type" data-dev-content-key="home.stayTypes.items[@stay-3].type" data-dev-file="/app/src/pages/index.tsx" data-dev-line="319" data-dev-id="0ffb07" style="white-space: pre-line;">Retreats</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.stayTypes.items[].description" data-dev-content-key="home.stayTypes.items[@stay-3].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="322" data-dev-id="009bfc" style="white-space: pre-line;">Quiet sanctuaries focused on wellness, nature, and the art of slowing down.</p></div><div class="group" data-dev-content-list="home.stayTypes.items" data-dev-content-list-index="3" data-dev-item-id="stay-4" data-dev-file="/app/src/pages/index.tsx" data-dev-line="301" data-dev-id="4745db" style="opacity: 1; transform: none;"><div class="aspect-[3/4] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="309" data-dev-id="e5f5ef"><img alt="Residences" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="400" height="533" data-dev-file="/app/src/pages/index.tsx" data-dev-line="310" data-dev-id="b1d13d" src="./ATIRAYA — Stay Somewhere Remarkable_files/residence"></div><h3 class="font-heading text-2xl font-light text-foreground mb-2" data-dev-content-key-template="home.stayTypes.items[].type" data-dev-content-key="home.stayTypes.items[@stay-4].type" data-dev-file="/app/src/pages/index.tsx" data-dev-line="319" data-dev-id="0ffb07" style="white-space: pre-line;">Residences</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.stayTypes.items[].description" data-dev-content-key="home.stayTypes.items[@stay-4].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="322" data-dev-id="009bfc" style="white-space: pre-line;">Private villas and long-stay homes for those who want the comforts of home in extraordinary places.</p></div></div></div></section><section class="py-20 md:py-28 bg-primary text-primary-foreground" data-dev-file="/app/src/pages/index.tsx" data-dev-line="332" data-dev-id="8c0c7c"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/pages/index.tsx" data-dev-line="333" data-dev-id="877150"><div class="mb-14 md:mb-20" data-dev-file="/app/src/pages/index.tsx" data-dev-line="334" data-dev-id="beaca8"><p class="text-xs tracking-[0.2em] uppercase text-primary-foreground/50 font-light mb-3" data-dev-content-key="home.difference.eyebrow" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="341" data-dev-id="9ec4cd" style="white-space: pre-line; opacity: 1; transform: none;">The Atiraya Difference</p><h2 class="font-heading text-4xl md:text-5xl font-light text-primary-foreground leading-tight max-w-lg" data-dev-content-key="home.difference.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="347" data-dev-id="7339b7" style="white-space: pre-line; opacity: 1; transform: none;">What we believe in.</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10" data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="355" data-dev-id="b82524"><div data-dev-content-list="home.difference.items" data-dev-content-list-index="0" data-dev-item-id="diff-1" data-dev-file="/app/src/pages/index.tsx" data-dev-line="357" data-dev-id="69f8fc" style="opacity: 1; transform: none;"><div class="w-8 h-px bg-primary-foreground/40 mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="364" data-dev-id="44bdd0"></div><h3 class="font-heading text-xl font-light text-primary-foreground mb-3" data-dev-content-key-template="home.difference.items[].title" data-dev-content-key="home.difference.items[@diff-1].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="365" data-dev-id="d4cac8" style="white-space: pre-line;">Thoughtful Design</h3><p class="text-primary-foreground/60 text-sm font-light leading-relaxed" data-dev-content-key-template="home.difference.items[].description" data-dev-content-key="home.difference.items[@diff-1].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="368" data-dev-id="99f79d" style="white-space: pre-line;">Every space is considered — from the light that enters a room to the materials underfoot.</p></div><div data-dev-content-list="home.difference.items" data-dev-content-list-index="1" data-dev-item-id="diff-2" data-dev-file="/app/src/pages/index.tsx" data-dev-line="357" data-dev-id="69f8fc" style="opacity: 1; transform: none;"><div class="w-8 h-px bg-primary-foreground/40 mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="364" data-dev-id="44bdd0"></div><h3 class="font-heading text-xl font-light text-primary-foreground mb-3" data-dev-content-key-template="home.difference.items[].title" data-dev-content-key="home.difference.items[@diff-2].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="365" data-dev-id="d4cac8" style="white-space: pre-line;">Exceptional Locations</h3><p class="text-primary-foreground/60 text-sm font-light leading-relaxed" data-dev-content-key-template="home.difference.items[].description" data-dev-content-key="home.difference.items[@diff-2].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="368" data-dev-id="99f79d" style="white-space: pre-line;">We seek out places of genuine natural beauty and cultural richness.</p></div><div data-dev-content-list="home.difference.items" data-dev-content-list-index="2" data-dev-item-id="diff-3" data-dev-file="/app/src/pages/index.tsx" data-dev-line="357" data-dev-id="69f8fc" style="opacity: 1; transform: none;"><div class="w-8 h-px bg-primary-foreground/40 mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="364" data-dev-id="44bdd0"></div><h3 class="font-heading text-xl font-light text-primary-foreground mb-3" data-dev-content-key-template="home.difference.items[].title" data-dev-content-key="home.difference.items[@diff-3].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="365" data-dev-id="d4cac8" style="white-space: pre-line;">Local Experiences</h3><p class="text-primary-foreground/60 text-sm font-light leading-relaxed" data-dev-content-key-template="home.difference.items[].description" data-dev-content-key="home.difference.items[@diff-3].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="368" data-dev-id="99f79d" style="white-space: pre-line;">Each destination connects guests with the people, food, craft, and stories of its place.</p></div><div data-dev-content-list="home.difference.items" data-dev-content-list-index="3" data-dev-item-id="diff-4" data-dev-file="/app/src/pages/index.tsx" data-dev-line="357" data-dev-id="69f8fc" style="opacity: 1; transform: none;"><div class="w-8 h-px bg-primary-foreground/40 mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="364" data-dev-id="44bdd0"></div><h3 class="font-heading text-xl font-light text-primary-foreground mb-3" data-dev-content-key-template="home.difference.items[].title" data-dev-content-key="home.difference.items[@diff-4].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="365" data-dev-id="d4cac8" style="white-space: pre-line;">Warm Hospitality</h3><p class="text-primary-foreground/60 text-sm font-light leading-relaxed" data-dev-content-key-template="home.difference.items[].description" data-dev-content-key="home.difference.items[@diff-4].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="368" data-dev-id="99f79d" style="white-space: pre-line;">Attentive without being intrusive. Present without being formal.</p></div><div data-dev-content-list="home.difference.items" data-dev-content-list-index="4" data-dev-item-id="diff-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="357" data-dev-id="69f8fc" style="opacity: 1; transform: none;"><div class="w-8 h-px bg-primary-foreground/40 mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="364" data-dev-id="44bdd0"></div><h3 class="font-heading text-xl font-light text-primary-foreground mb-3" data-dev-content-key-template="home.difference.items[].title" data-dev-content-key="home.difference.items[@diff-5].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="365" data-dev-id="d4cac8" style="white-space: pre-line;">Conscious Living</h3><p class="text-primary-foreground/60 text-sm font-light leading-relaxed" data-dev-content-key-template="home.difference.items[].description" data-dev-content-key="home.difference.items[@diff-5].description" data-dev-file="/app/src/pages/index.tsx" data-dev-line="368" data-dev-id="99f79d" style="white-space: pre-line;">We build and operate with care for the communities and environments we are part of.</p></div></div></div></section><section class="py-20 md:py-28 lg:py-36" data-dev-file="/app/src/pages/index.tsx" data-dev-line="378" data-dev-id="8c0c7d"><div class="max-w-7xl mx-auto px-6 lg:px-10" data-dev-file="/app/src/pages/index.tsx" data-dev-line="379" data-dev-id="81ae11"><div class="mb-12 md:mb-16" data-dev-file="/app/src/pages/index.tsx" data-dev-line="380" data-dev-id="e5db09"><p class="text-xs tracking-[0.2em] uppercase text-muted-foreground font-light mb-3" data-dev-content-key="home.editorial.eyebrow" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="387" data-dev-id="63948e" style="white-space: pre-line; opacity: 1; transform: none;">Discover More</p><h2 class="font-heading text-4xl md:text-5xl font-light text-foreground leading-tight" data-dev-content-key="home.editorial.headline" data-dev-bound-text="true" data-dev-bound-source-kind="content-key" data-dev-file="/app/src/pages/index.tsx" data-dev-line="393" data-dev-id="d20198" style="white-space: pre-line; opacity: 1; transform: none;">Stories from the places we love.</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10" data-dev-dynamic="true" data-dev-file="/app/src/pages/index.tsx" data-dev-line="401" data-dev-id="172ea5"><article class="group cursor-pointer" data-dev-content-list="home.editorial.items" data-dev-content-list-index="0" data-dev-item-id="ed-1" data-dev-file="/app/src/pages/index.tsx" data-dev-line="403" data-dev-id="170afe" style="opacity: 1; transform: none;"><div class="aspect-[4/3] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="411" data-dev-id="ebc952"><img alt="The quiet magic of India's western coast" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="600" height="450" data-dev-file="/app/src/pages/index.tsx" data-dev-line="412" data-dev-id="4f62e0" src="./ATIRAYA — Stay Somewhere Remarkable_files/editorial-1"></div><p class="text-xs tracking-[0.15em] uppercase text-muted-foreground font-light mb-2" data-dev-content-key-template="home.editorial.items[].category" data-dev-content-key="home.editorial.items[@ed-1].category" data-dev-file="/app/src/pages/index.tsx" data-dev-line="421" data-dev-id="a43a9f" style="white-space: pre-line;">Destinations</p><h3 class="font-heading text-xl md:text-2xl font-light text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" data-dev-content-key-template="home.editorial.items[].title" data-dev-content-key="home.editorial.items[@ed-1].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="424" data-dev-id="276e0a" style="white-space: pre-line;">The quiet magic of India's western coast</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.editorial.items[].excerpt" data-dev-content-key="home.editorial.items[@ed-1].excerpt" data-dev-file="/app/src/pages/index.tsx" data-dev-line="427" data-dev-id="a43aa0" style="white-space: pre-line;">From the red laterite cliffs of Varkala to the silver sands of Goa, the western shoreline holds some of the country's most beautiful places to stay.</p></article><article class="group cursor-pointer" data-dev-content-list="home.editorial.items" data-dev-content-list-index="1" data-dev-item-id="ed-2" data-dev-file="/app/src/pages/index.tsx" data-dev-line="403" data-dev-id="170afe" style="opacity: 1; transform: none;"><div class="aspect-[4/3] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="411" data-dev-id="ebc952"><img alt="Building with the land, not against it" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="600" height="450" data-dev-file="/app/src/pages/index.tsx" data-dev-line="412" data-dev-id="4f62e0" src="./ATIRAYA — Stay Somewhere Remarkable_files/editorial-2"></div><p class="text-xs tracking-[0.15em] uppercase text-muted-foreground font-light mb-2" data-dev-content-key-template="home.editorial.items[].category" data-dev-content-key="home.editorial.items[@ed-2].category" data-dev-file="/app/src/pages/index.tsx" data-dev-line="421" data-dev-id="a43a9f" style="white-space: pre-line;">Architecture</p><h3 class="font-heading text-xl md:text-2xl font-light text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" data-dev-content-key-template="home.editorial.items[].title" data-dev-content-key="home.editorial.items[@ed-2].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="424" data-dev-id="276e0a" style="white-space: pre-line;">Building with the land, not against it</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.editorial.items[].excerpt" data-dev-content-key="home.editorial.items[@ed-2].excerpt" data-dev-file="/app/src/pages/index.tsx" data-dev-line="427" data-dev-id="a43aa0" style="white-space: pre-line;">How thoughtful architecture can make a place feel like it has always belonged exactly where it stands.</p></article><article class="group cursor-pointer" data-dev-content-list="home.editorial.items" data-dev-content-list-index="2" data-dev-item-id="ed-3" data-dev-file="/app/src/pages/index.tsx" data-dev-line="403" data-dev-id="170afe" style="opacity: 1; transform: none;"><div class="aspect-[4/3] overflow-hidden mb-5" data-dev-file="/app/src/pages/index.tsx" data-dev-line="411" data-dev-id="ebc952"><img alt="The art of doing nothing, beautifully" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" width="600" height="450" data-dev-file="/app/src/pages/index.tsx" data-dev-line="412" data-dev-id="4f62e0" src="./ATIRAYA — Stay Somewhere Remarkable_files/experience"></div><p class="text-xs tracking-[0.15em] uppercase text-muted-foreground font-light mb-2" data-dev-content-key-template="home.editorial.items[].category" data-dev-content-key="home.editorial.items[@ed-3].category" data-dev-file="/app/src/pages/index.tsx" data-dev-line="421" data-dev-id="a43a9f" style="white-space: pre-line;">Wellness</p><h3 class="font-heading text-xl md:text-2xl font-light text-foreground leading-snug mb-3 group-hover:text-primary transition-colors" data-dev-content-key-template="home.editorial.items[].title" data-dev-content-key="home.editorial.items[@ed-3].title" data-dev-file="/app/src/pages/index.tsx" data-dev-line="424" data-dev-id="276e0a" style="white-space: pre-line;">The art of doing nothing, beautifully</h3><p class="text-muted-foreground text-sm font-light leading-relaxed" data-dev-content-key-template="home.editorial.items[].excerpt" data-dev-content-key="home.editorial.items[@ed-3].excerpt" data-dev-file="/app/src/pages/index.tsx" data-dev-line="427" data-dev-id="a43aa0" style="white-space: pre-line;">Why the best retreats are the ones that ask nothing of you — and give everything back.</p></article></div></div></section><section class="py-20 md:py-28 bg-muted text-center" data-dev-file="/app/src/pages/index.tsx" data-dev-line="437" data-dev-id="8c0c7e"><div class="max-w-2xl mx-auto px-6" data-dev-file="/app/src/pages/index.tsx" data-dev-line="438" data-dev-id="b18296"><h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight mb-6" data-dev-editable="text" data-dev-file="/app/src/pages/index.tsx" data-dev-line="445" data-dev-id="a864a5" style="opacity: 1; transform: none;">Ready to stay somewhere remarkable?</h2><p class="text-muted-foreground font-light mb-10 text-base leading-relaxed" data-dev-editable="text" data-dev-file="/app/src/pages/index.tsx" data-dev-line="451" data-dev-id="4349fb" style="opacity: 1; transform: none;">Our first destinations are taking shape. Be among the first to know when Atiraya opens its doors.</p><div class="flex flex-wrap justify-center gap-4" data-dev-file="/app/src/pages/index.tsx" data-dev-line="457" data-dev-id="8c1fae" style="opacity: 1; transform: none;"><button class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-xs tracking-[0.15em] uppercase font-light hover:bg-primary/90 transition-colors" data-dev-file="/app/src/pages/index.tsx" data-dev-line="458" data-dev-id="8a7e1b">Get in Touch <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" data-dev-file="/app/src/pages/index.tsx" data-dev-line="462" data-dev-id="e095d5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a class="inline-flex items-center gap-2 px-8 py-4 border border-border text-foreground text-xs tracking-[0.15em] uppercase font-light hover:bg-background transition-colors" data-dev-file="/app/src/pages/index.tsx" data-dev-line="464" data-dev-id="1ee0ed" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Our Story</a></div></div></section></main><footer class="bg-primary text-primary-foreground" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="6" data-dev-id="42358d"><div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 md:py-20" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="7" data-dev-id="166321"><div class="mb-14 md:mb-16" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="9" data-dev-id="436fb5"><p class="font-heading text-4xl md:text-5xl lg:text-6xl font-light leading-tight max-w-xl" data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="10" data-dev-id="5222d6">Stay Somewhere Remarkable.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 pb-12 border-b border-primary-foreground/20" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="16" data-dev-id="436fb6"><div data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="18" data-dev-id="aed80a"><img alt="ATIRAYA" class="block h-auto max-h-12 w-auto max-w-[160px] object-contain mb-3 brightness-0 invert" width="160" height="48" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="19" data-dev-id="809b98" src="./ATIRAYA — Stay Somewhere Remarkable_files/horizontal" style="filter: none;" data-airo-logo-corrected="horizontal"><p class="text-xs tracking-[0.1em] uppercase text-primary-foreground/60 font-light" data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="26" data-dev-id="33adab">Hotels · Resorts · Retreats · Residences</p></div><nav aria-label="Footer links" class="flex flex-col gap-3" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="32" data-dev-id="5f6a0c"><a class="text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors tracking-wide" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="33" data-dev-id="47158b" href="https://lcrhtzzbes.preview.c40.airoapp.ai/destinations" data-discover="true">Destinations</a><a class="text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors tracking-wide" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="39" data-dev-id="47158c" href="https://lcrhtzzbes.preview.c40.airoapp.ai/our-story" data-discover="true">Our Story</a><a class="text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors tracking-wide" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="45" data-dev-id="47158d" href="https://lcrhtzzbes.preview.c40.airoapp.ai/contact" data-discover="true">Contact</a><a class="text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors tracking-wide" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="51" data-dev-id="47158e" href="https://lcrhtzzbes.preview.c40.airoapp.ai/careers" data-discover="true">Careers</a><a class="text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors tracking-wide" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="57" data-dev-id="47158f" href="https://lcrhtzzbes.preview.c40.airoapp.ai/privacy" data-discover="true">Privacy</a></nav><div data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="66" data-dev-id="aed80b"><p class="text-xs tracking-[0.15em] uppercase text-primary-foreground/50 font-light mb-4" data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="67" data-dev-id="45c62c">Follow</p><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors" aria-label="ATIRAYA on Instagram" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="70" data-dev-id="45865d"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="77" data-dev-id="4528f4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg><span data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="78" data-dev-id="fad4a0">Instagram</span></a></div></div><div class="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="84" data-dev-id="436fb7"><p class="text-xs text-primary-foreground/40 font-light tracking-wide" data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="85" data-dev-id="7653d8">© 2026 Atiraya Hospitality. All rights reserved.</p><p class="text-xs text-primary-foreground/40 font-light tracking-wide" data-dev-editable="text" data-dev-file="/app/src/layouts/parts/Footer.tsx" data-dev-line="88" data-dev-id="7653d9">A new kind of hospitality.</p></div></div></footer></div></div>
+    <script type="module" src="./ATIRAYA — Stay Somewhere Remarkable_files/index.html"></script>
+    <script src="./ATIRAYA — Stay Somewhere Remarkable_files/analytics.js.download"></script>
+    
+    <script>
+      (function () {
+        var spinner = document.getElementById('airo-boot-spinner');
+        if (!spinner) return;
+        var appEl = document.getElementById('app');
+        if (!appEl) {
+          spinner.remove();
+          return;
+        }
+        if (appEl.firstElementChild) {
+          spinner.remove();
+          return;
+        }
+        var observer = new MutationObserver(function () {
+          if (appEl.firstElementChild) {
+            observer.disconnect();
+            spinner.remove();
+          }
+        });
+        observer.observe(appEl, { childList: true });
+        setTimeout(function () { spinner.classList.add('airo-boot-slow'); }, 20000);
+        setTimeout(function () { observer.disconnect(); spinner.remove(); }, 90000);
+      })();
+    </script>
+  
+
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span><span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span><div id="vimeo_tool" class="vimeo_tool"><template shadowrootmode="open"><style>
+#vimeo_tool {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #3d3d3d;
+  font-family: Source Han Sans;
+  font-variation-settings: "opsz" auto;
+font-feature-settings: "kern" on;
+line-height:normal;
+}
+
+#vimeo_tool.isOption{
+  background: linear-gradient(#fff, rgba(100, 170, 228, 0.2));
+}
+
+.priceImg {
+  width: 372px;
+  z-index: 99;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.priceImg .get {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 28px;
+  border-radius: 4px;
+  background-color: rgba(13, 189, 189, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  text-align: center;
+  font-family: Roboto;
+  cursor: pointer;
+  width: 67px;
+  bottom: 48px;
+  line-height: 28px;
+}
+
+.priceImg img {
+  width: 100%;
+}
+
+.priceImg .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(154, 154, 154, 1);
+}
+
+
+
+.pop {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 9999999;
+}
+
+.notice {
+  width: 360px;
+  text-align: center;
+  margin-bottom: 20px
+}
+
+.notice_in {
+  display: none;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fbf6f6;
+  animation: fadenum 1s;
+  width: 470px;
+  margin: 0 auto 0 -40px;
+}
+
+.notice_in_svg {
+  float: left;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+@keyframes fadenum {
+  0% {
+      transform: translateX(70px);
+  }
+}
+
+.dialog {
+  height: 560px;
+  width: 400px;
+  background-color: #fbf6f6;
+  padding-top: 0px;
+}
+
+.dialog_close {
+  margin-top: -102px;
+  margin-left: 380px;
+  position: absolute;
+}
+
+.dialog_in {
+  max-width: 320px;
+  flex: 1;
+  border: 1px solid #FD935A;
+  border-radius: 5px;
+  position: relative;
+  margin-right: 15px;
+  padding-top: 20px;
+}
+
+.dialog_in:last-child {
+  margin-right: 0;
+}
+
+.dialog_in span.discount {
+  color: #B36BF4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #f9dfcf;
+  padding: 6px 0 6px 6px;
+  border-radius: 0 4px 0 6px;
+  font-size: 13px;
+}
+
+:root {
+  --titleHeight: 55px
+}
+
+.pro {
+  text-align: center;
+  height: var(--titleHeight);
+  line-height: var(--titleHeight);
+  color: #000;
+  font-weight: 450;
+  font-size: 28px;
+}
+
+.dialog_line {
+  border-bottom: 1px solid #ffc750;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.fee {
+  display: block;
+  text-align: center;
+  height: var(--titleHeight);
+  line-height: var(--titleHeight)
+}
+
+.fee>span:nth-child(1) {
+  font-size: 34px;
+  color: #444444;
+  font-weight: 500;
+  font-family: Source Han Sans;
+}
+
+#newsvd_dialog_in.Yearly .fee>span:nth-child(1){
+  color: #FD935A;
+}
+
+
+#newsvd_dialog_in.Yearly span.discount {
+  border-radius: 0 4px 0 100%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.fee>span:nth-child(2) {
+  color: #B6B5B5;
+    font-size: 14px;
+}
+
+.feature_list {
+  margin-left: 40px;
+  text-align: left;
+}
+
+.feature_list img.rightIcon{
+  margin-right: 7px;
+}
+
+.feature_list ul {
+  margin-left: -40px;
+  font-size: 14px
+}
+
+.feature_list ul li svg {
+  margin-left: -10px;
+  margin-right: 0px;
+  height: 13px;
+}
+
+.feature_list ul li {
+  line-height: 30px;
+  text-indent: -15px;
+  list-style: none;
+}
+
+.feature_list ul li::marker {
+  color: #00c0be;
+}
+
+.dialog_get {
+  cursor: pointer;
+  border: none;
+  display: block;
+  border-radius: 5px;
+  background-color: #00c0be;
+  height: 30px;
+  width: 100px;
+  line-height: 30px;
+  margin: 10px auto 5px;
+  font-weight: 600;
+  color: white
+}
+
+.newsvd_pro_sub {
+  border-radius: 999999px;
+  color: #FD935A;
+  box-sizing: border-box;
+  border: 1px solid #FD935A;
+  width: 80%;
+  text-align: center;
+  padding: 8px;
+  margin: 10px auto;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  transition: all .4s;
+  font-size: 14px;
+}
+
+#newsvd_dialog_in.Yearly .newsvd_pro_sub {
+  background: linear-gradient(180deg, #F1C946 0%, #FD935A 100%);
+  color: #fff;
+}
+
+#newsvd_dialog_in.Yearly .newsvd_pro_sub:hover{
+  opacity: .9;
+}
+
+span.newsvd_pro_sub:hover {
+  background: #FD935A;
+  color: #fff;
+}
+
+.dialog_close {
+  height: 20px;
+  width: 20px;
+  border-radius: 4em;
+}
+
+.dialog_close:hover {
+  background-color: #00c0be;
+}
+
+.external_ffmpeg {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#payment_popup {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.payment_content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 103;
+  height: 320px;
+  width: 410px;
+  background: #fff;
+  padding: 20px;
+}
+
+.payment_select {
+  padding: 20px 0 0 110px;
+}
+
+.payment_label {
+  line-height: 30px;
+}
+
+.original_price {
+  text-decoration: line-through;
+  color: red !important;
+}
+
+.chat_summary_block,
+.newsvd_chat_summary_block {
+  display: none;
+  position: absolute;
+  width: 250px;
+  margin-left: 65px;
+  height: 85px;
+  text-align: center !important;
+  background: white;
+}
+
+.summary_new {
+  height: 18px;
+  width: 18px;
+  margin-right: -3px;
+  margin-left: -6px;
+  float: left;
+  border-radius: 3px
+}
+
+.newsvd_summary_new {
+  height: 18px;
+  width: 18px;
+  margin-top: -4px;
+  margin-right: -3px;
+  margin-left: -5px;
+  float: left;
+  border-radius: 3px
+}
+
+.timerInput {
+  font-size: 16px;
+  display: inline-block;
+  margin: 10px 7% 0 0
+}
+
+.timeTip {
+  display: none;
+  position: absolute;
+  left: 23px;
+  border-radius: 5px;
+  width: 220px;
+  margin-top: -27px;
+  margin-left: -250px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center !important;
+  background: #0072e6;
+  color: white;
+}
+
+.timerInput p {
+  width: 77px;
+  height: 31px;
+  line-height: 31px;
+  border: 1px solid #9a999c;
+  border-radius: 4px;
+  color: #9a999c;
+  font-size: 14px;
+  text-align: center;
+  font-family: Roboto;
+  margin-top: 5px;
+}
+
+.spanTimer {
+  background: none;
+  outline: none;
+  padding: 0 !important;
+  width: 16px;
+  border: 0;
+  color: #9a999c !important;
+}
+
+.spanTimer:focus {
+  border: none;
+}
+
+.time_middle {
+  margin-left: -15px;
+  color: #9a999c;
+}
+
+.jump_to_chatGPT {
+  background: #0072e6 !important;
+  color: white;
+  outline: none;
+  font-size: 13px !important;
+  height: 27px !important;
+  width: 150px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px !important;
+  cursor: pointer;
+}
+
+.summary_position {
+  display: inline-block;
+  position: relative;
+  margin-left: -10px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.summary_position img {
+  height: 20px;
+  width: 20px;
+}
+
+.summary_position:hover:after {
+  position: absolute;
+  left: -30px;
+  top: -25px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 5px;
+  color: #fff;
+  content: attr(labelTooltip);
+  white-space: nowrap;
+  z-index: 2;
+  width: 120px;
+}
+
+.summary_time_height {
+  height: 41px;
+}
+
+.other_options {
+  line-height: 20px !important;
+}
+
+.other_options_img {
+  height: 20px;
+  width: 20px;
+  float: right;
+}
+
+.newsvd_dialog {
+  background-color: #fff;
+  padding-top: 20px;
+  padding: 20px 34px;
+  position: relative;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #0000004d;
+  width: 80vw;
+  max-width: 940px;
+}
+
+.newsvd_dialog_close {
+  height: 20px;
+  width: 20px;
+  border-radius: 4em;
+  right: 6px;
+  top: 4px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.newsvd_dialog_close:hover {
+  background-color: #FD935A;
+}
+
+.top_pro_container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top_pro {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #3d3d3d;
+}
+
+.top_pro_span {
+  font-size: 13px;
+  color: #9a999c;
+}
+
+.discountImg{
+  position: absolute;
+  width: 120px;
+  right: -60px;
+  top: -60px;
+}
+
+.perMon{
+  color: #A19F9F;
+  font-size: 15px;
+  text-align: center;
+  height: 18px;
+  line-height: 18px;
+}
+
+.hotTitle{
+  position: absolute;
+  width: 100%;
+  padding: 5px 0 5px 8px;
+  top: 0;
+  transform: translateY(-100%);
+  z-index: 0;
+  border-radius: 8px 8px 0 0;
+  opacity: 1;
+  background: rgba(179, 107, 244, 0.4);
+  font-size: 13px;
+  font-weight: 600;
+  color: #FD935A;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.cardLogo{
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  font-size: 14px;
+  color: #3D3D3D;
+}
+.cardLogo img{
+  width: 14px;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+/* 800px以下媒体查询 */
+@media screen and (max-width: 800px) {
+  .newsvd_dialog {
+      width: 90vw;
+  }
+
+  div#pop {
+      top: 0;
+      padding-top: 0;
+      transform: translateX(-50%) translateY(0);
+      overflow: auto;
+      max-height: calc(100vh - 40px);
+  }
+}</style><div><div id="vimeo_tool" class="" style="display: none;"><div id="pop" class="pop"><div id="newsvd_notice" class="notice"><div id="newsvd_notice_in" class="notice_in"><div class="notice_in_svg"><svg t="1669280615610" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2722" width="16" height="16" class="icon"><path d="M514.048 59.392q93.184 0 174.592 35.328t142.336 96.768 96.256 143.36 35.328 175.104-35.328 175.616-96.256 143.872-142.336 96.768-174.592 35.328-175.104-35.328-142.848-96.768-96.256-143.872-35.328-175.616 35.328-175.104 96.256-143.36 142.848-96.768 175.104-35.328zM795.648 423.936q18.432-18.432 19.456-45.568t-17.408-45.568-45.056-17.92-45.056 18.944l-288.768 288.768-99.328-98.304q-18.432-18.432-45.056-18.944t-45.056 17.92-18.944 43.52 17.92 43.52l142.336 143.36q18.432 18.432 48.128 17.92t48.128-18.944l-4.096 4.096z" p-id="2723" fill="#71b601"></path></svg></div><div id="newsvd_notice_in_span" class="notice_in_span"><span>We will support it soon! Click</span><span id="external_ffmpeg" class="external_ffmpeg">2k/4k</span><span>to download videos first.</span></div></div></div><div id="newsvd_dialog" class="newsvd_dialog"><div class="cardLogo"><span>Vimeo™ Downloader</span></div><div class="top_pro_container"><div class="top_pro">Plan</div><span class="top_pro_span">Subscription will automatically renew every month before you unsubscribe.</span></div><div id="newsvd_dialog_close" class="newsvd_dialog_close"><svg t="1669283546396" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4105" width="20" height="20" class="icon"><path d="M794.8 794.8c-14 14-36.9 14-50.9 0L229.2 280.1c-14-14-14-36.9 0-50.9s36.9-14 50.9 0L794.9 744c13.9 13.9 13.9 36.8-0.1 50.8z" p-id="4106" fill="#2c2c2c"></path><path d="M794.8 229.2c14 14 14 36.9 0 50.9L280.1 794.8c-14 14-36.9 14-50.9 0s-14-36.9 0-50.9L744 229.1c13.9-13.9 36.8-13.9 50.8 0.1z" p-id="4107" fill="#2c2c2c"></path></svg></div><div style="display: flex; justify-content: space-around;"><div id="newsvd_dialog_in" class="dialog_in Monthly"><!----><!----><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 6.99</span><span> / month</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-monthly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div><div id="newsvd_dialog_in" class="dialog_in Quarterly"><span class="discount">Save 24%</span><!----><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 15.99</span><span> / quarter</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-quarterly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div><div id="newsvd_dialog_in" class="dialog_in Yearly"><span class="discount">Save 52%</span><div class="hotTitle"> 🔥 Flash Sale </div><div id="feature_explain" class="feature_explain"><span id="fee" class="fee"><span>$ 39.99</span><span> / year</span></span><div style="display: flex; justify-content: center;"><span pid="penndbmahnpapepljikkjmakcobdahne-yearly" class="newsvd_pro_sub">Upgrade</span></div><div id="feature_list" class="feature_list"><ul id="feature_list_ul"><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download videos with audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download 1000+ web</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>1-6x download speed</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download audio</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Support download subtitles</span></li><li><img src="chrome-extension://penndbmahnpapepljikkjmakcobdahne/icons/right.png" alt="" class="rightIcon"><span>Unlimited downloads</span></li></ul></div></div></div></div><p style="text-align: center; font-size: 12px; color: rgb(121, 120, 120); margin: 10px 0px;"> Tip：Please refresh the page after the payment is successful </p></div></div></div></div></template></div><div id="vtPopupMenu" style="display: none;"></div><div id="airo-dev-tools-injected" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; z-index: 2147483647;"><div data-airo-dev-tools="true" data-dev-dynamic="true" data-dev-file="/app/dev-tools/src/components/DevelopmentMode.tsx" data-dev-line="1715" data-dev-id="ae96f6"></div></div><div data-airo-dev-tools="" style="position: fixed; bottom: 8px; right: 8px; z-index: 999999; background: rgba(0, 0, 0, 0.85); color: rgb(0, 255, 0); font-family: monospace; font-size: 11px; padding: 8px 10px; border-radius: 6px; pointer-events: none; max-width: 300px; line-height: 1.4; display: none;"></div></body></html>
